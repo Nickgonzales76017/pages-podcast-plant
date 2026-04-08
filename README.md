@@ -17,22 +17,32 @@
 
 ## Quick Start
 
+### Browser-first GitHub-native intake
+
+1. Open the live Pages app.
+2. Select an episode audio file and download the intake-ready renamed copy.
+3. Open the repo `input/` folder from the app and upload that file with GitHub's own web UI.
+4. Commit to `main`; the Bonfyre Actions runtime processes it and republishes the site.
+
+### Local repo workflow
+
 ```bash
-make setup              # wire hooks + verify binaries
+make setup
 cp ~/my-recording.wav input/
 git add input/ && git commit -m "add recording"
-# hooks run automatically → site/ updated
-git push                # GitHub Pages deploys
+git push
 ```
 
 ## Architecture
 
 ```
-input/  →  git commit  →  .githooks/post-commit (Bonfyre pipeline)
-                              ↓
-                         artifacts/  (JSON manifests, transcripts, briefs)
-                              ↓
-                         site/  →  git push  →  GitHub Pages
+browser prepare  →  GitHub web upload  →  input/
+                                          ↓
+                             reusable Bonfyre runtime workflow
+                                          ↓
+                         artifacts/ + site/job.json + site/summary.json
+                                          ↓
+                                   site/  →  GitHub Pages
 ```
 
 ## Git Hooks
@@ -48,4 +58,3 @@ input/  →  git commit  →  .githooks/post-commit (Bonfyre pipeline)
 ## Powered By
 
 [Bonfyre](https://github.com/Nickgonzales76017/bonfyre) — 48 composable C11 binaries. ~2.1 MB total.
-
