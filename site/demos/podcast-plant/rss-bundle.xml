@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Podcast Plant Demo Bundle</title>
+    <description>Bonfyre demo RSS bundle for a packaged podcast episode.</description>
+    <link>https://nickgonzales76017.github.io/pages-podcast-plant/</link>
+    <item>
+      <title>Founder Systems Episode 014</title>
+      <description>Show notes, clips, article draft, and bundle-ready metadata.</description>
+      <guid>podcast-plant-demo-014</guid>
+    </item>
+  </channel>
+</rss>

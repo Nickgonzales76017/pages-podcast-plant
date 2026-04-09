@@ -1,0 +1,8 @@
+{
+  "episode": "founder-systems-episode-014",
+  "clips": [
+    { "title": "Tiny binaries beat bloated stacks", "start": "00:03:12", "end": "00:03:56" },
+    { "title": "Artifact contracts reduce handoff friction", "start": "00:14:08", "end": "00:14:49" },
+    { "title": "GitHub as the control plane", "start": "00:27:11", "end": "00:27:58" }
+  ]
+}

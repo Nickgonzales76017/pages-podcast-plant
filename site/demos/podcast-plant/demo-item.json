@@ -10,11 +10,61 @@
   "optionalModules": ["bonfyre-narrate", "bonfyre-repurpose", "bonfyre-distribute"],
   "outputs": ["show notes", "clip list", "article draft", "RSS-ready bundle"],
   "compositionNote": "This one episode fans out into multiple deliverables with tiny single-purpose binaries. You can stop at clips, keep going to packaging, or swap in bonfyre-narrate and bonfyre-distribute without changing the rest of the stack.",
+  "moduleNotes": {
+    "bonfyre-transcribe": "bonfyre-transcribe turns the source episode into the base transcript artifact that every later stage reuses.",
+    "bonfyre-transcript-clean": "bonfyre-transcript-clean normalizes the raw transcript so later steps do not need to solve cleanup again.",
+    "bonfyre-paragraph": "bonfyre-paragraph restructures the transcript into readable blocks for downstream summarization and rendering.",
+    "bonfyre-brief": "bonfyre-brief creates the summary object that can become notes, article copy, or narration.",
+    "bonfyre-clips": "bonfyre-clips identifies reusable moments without changing the rest of the episode artifact flow.",
+    "bonfyre-render": "bonfyre-render turns the same structured episode artifacts into human-friendly outputs.",
+    "bonfyre-pack": "bonfyre-pack collects the deliverables into one publish-ready bundle.",
+    "bonfyre-emit": "bonfyre-emit pushes the packaged result into release surfaces like feeds and published payloads."
+  },
+  "moduleActions": {
+    "bonfyre-brief": {
+      "href": "demos/podcast-plant/show-notes.md",
+      "label": "Open show notes"
+    },
+    "bonfyre-clips": {
+      "href": "demos/podcast-plant/clip-list.json",
+      "label": "Open clip list"
+    },
+    "bonfyre-render": {
+      "href": "demos/podcast-plant/article-draft.md",
+      "label": "Open article draft"
+    },
+    "bonfyre-pack": {
+      "href": "demos/podcast-plant/rss-bundle.xml",
+      "label": "Open RSS bundle"
+    },
+    "bonfyre-emit": {
+      "href": "demos/podcast-plant/rss-bundle.xml",
+      "label": "Open emitted bundle"
+    }
+  },
   "outputNotes": {
     "show notes": "bonfyre-brief and bonfyre-render generate a publishable summary layer from the cleaned transcript. This is the fastest lightweight output for an episode.",
     "clip list": "bonfyre-clips marks reusable moments from the same episode artifact, so short-form outputs stay linked to the full transcript and summary.",
     "article draft": "The article draft is the repurposing surface: the same transcript can become prose without rebuilding the pipeline around a separate content system.",
     "RSS-ready bundle": "bonfyre-pack and bonfyre-emit package the episode for actual distribution. This is where the app stops being a summary demo and becomes a small publishing system."
+  },
+  "outputLinks": {
+    "show notes": {
+      "href": "demos/podcast-plant/show-notes.md",
+      "label": "Open show notes"
+    },
+    "clip list": {
+      "href": "demos/podcast-plant/clip-list.json",
+      "label": "Open clip list"
+    },
+    "article draft": {
+      "href": "demos/podcast-plant/article-draft.md",
+      "label": "Open article draft"
+    },
+    "RSS-ready bundle": {
+      "href": "demos/podcast-plant/rss-bundle.xml",
+      "label": "Open RSS-ready bundle"
+    }
   },
   "demo": true
 }
