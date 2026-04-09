@@ -1,0 +1,55 @@
+[
+  {
+    "id": "demo-podcast-plant-014",
+    "file": "founder-systems-episode-014.mp3",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode packaged into a publish-ready summary with three clip moments around tiny binaries, artifact contracts, and GitHub as the control plane.",
+    "tags": ["show-notes", "clips", "release-ready"],
+    "flagged": true,
+    "demo": true,
+    "outputs": ["show notes", "clip list", "article draft", "RSS-ready bundle"],
+    "outputNotes": {
+      "show notes": "Show notes are the quickest publishable output from the episode.",
+      "clip list": "Clips matter because they let one episode become many short-form entry points.",
+      "article draft": "The article draft shows how the same episode can repurpose into long-form copy.",
+      "RSS-ready bundle": "The bundle is the distribution-ready version of the same episode artifact."
+    },
+    "outputLinks": {
+      "show notes": { "href": "demos/podcast-plant/show-notes.md", "label": "Open show notes" },
+      "clip list": { "href": "demos/podcast-plant/clip-list.json", "label": "Open clip list" },
+      "article draft": { "href": "demos/podcast-plant/article-draft.md", "label": "Open article draft" },
+      "RSS-ready bundle": { "href": "demos/podcast-plant/rss-bundle.xml", "label": "Open RSS bundle" }
+    },
+    "searchSummary": "Tiny binaries, artifact contracts, GitHub control plane.",
+    "whyItMatters": "Episode search shows how multiple recordings can reuse the same repurposing path while still surfacing the right moments and outputs for each one.",
+    "searchIntro": "Search across the seeded episode set to see how the same pipeline handles different topics and still yields clips, notes, and publish-ready outputs.",
+    "searchOutputs": ["clip list", "RSS-ready bundle"]
+  },
+  {
+    "id": "demo-podcast-plant-013",
+    "file": "founder-systems-episode-013.mp3",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode focused on artifact-native CMS design, local-first outputs, and why prompts should not be the user interface.",
+    "tags": ["cms", "artifact-native", "show-notes"],
+    "flagged": false,
+    "demo": true,
+    "outputs": ["show notes", "article draft"],
+    "searchSummary": "Artifact-native CMS, local-first outputs, no prompt UI.",
+    "whyItMatters": "Once there are multiple episodes, search and compression stop being abstract. They become the way users revisit the right conversation quickly."
+  },
+  {
+    "id": "demo-podcast-plant-012",
+    "file": "founder-systems-episode-012.mp3",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode covered demo fleets, productized artifacts, and how one source recording should generate notes, clips, and release surfaces without branching into separate tools.",
+    "tags": ["clips", "publishing", "artifact-flow"],
+    "flagged": false,
+    "demo": true,
+    "outputs": ["clip list", "show notes", "RSS-ready bundle"],
+    "searchSummary": "Demo fleets, productized artifacts, one source to many surfaces.",
+    "whyItMatters": "A multi-episode dataset makes reuse visible. The user can search related episodes instead of staring at one isolated output file."
+  }
+]

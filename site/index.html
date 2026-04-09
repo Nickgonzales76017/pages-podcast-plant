@@ -382,6 +382,7 @@
         <div class="result-list">${quickWins.map(entry => `
           <div class="result-item"><strong>${escapeHtml(entry.title)}</strong>${escapeHtml(entry.copy)}</div>
         `).join('')}</div>
+        ${Array.isArray(item.outputs) && item.outputs.length ? `<div class="output-grid">${item.outputs.map(step => `<span class="output-chip">${escapeHtml(step)}</span>`).join('')}</div>` : ''}
         ${renderResultLinks(links)}
       </div>`;
     }
@@ -423,7 +424,7 @@
   <script>
     BonfyreDemoBoot.init({
       storeKey: ITEMS_KEY,
-      demoPath: 'demos/podcast-plant/demo-item.json',
+      demoPath: 'demos/podcast-plant/demo-items.json',
       getItems: () => items,
       setItems: value => { items = value; },
       renderBoard: renderBoard
