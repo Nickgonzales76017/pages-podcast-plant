@@ -29,7 +29,7 @@ jobs:
           git clone --depth 1 https://github.com/Nickgonzales76017/bonfyre-oss.git /tmp/bonfyre
           chmod +x /tmp/bonfyre/scripts/build-portable-runtime.sh
           /tmp/bonfyre/scripts/build-portable-runtime.sh \
-            BonfyreBrief BonfyreTag BonfyreNarrate BonfyreRender BonfyrePack BonfyreEmit
+            BonfyreBrief BonfyreNarrate BonfyreRender BonfyrePack BonfyreEmit
           echo "$HOME/.local/bin" >> "$GITHUB_PATH"
 
       - name: Detect new files
@@ -64,7 +64,6 @@ jobs:
                 ;;
               md|txt|json)
                 bonfyre-brief "$f" --out "artifacts/${base}.brief.json"
-                bonfyre-tag "artifacts/${base}.brief.json" --out "artifacts/${base}.tags.json"
                 bonfyre-narrate "artifacts/${base}.brief.json" --out "artifacts/${base}.narrate.json"
                 bonfyre-render "artifacts/${base}.narrate.json" --template episode --out "site/episodes/${base}.html"
                 bonfyre-pack "artifacts/${base}.brief.json" --out "artifacts/${base}.pack.zip"
