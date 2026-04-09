@@ -1,55 +1,2902 @@
 [
   {
-    "id": "demo-podcast-plant-014",
-    "file": "founder-systems-episode-014.mp3",
+    "id": "pod-creator-systems-001-community-resilience-001",
+    "file": "Creator Systems Episode 001 — community resilience",
     "time": "Demo dataset",
     "status": "complete",
-    "brief": "Episode packaged into a publish-ready summary with three clip moments around tiny binaries, artifact contracts, and GitHub as the control plane.",
-    "tags": ["show-notes", "clips", "release-ready"],
+    "brief": "Episode explores community resilience with a focus on how the workflow scales. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "community resilience",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, community resilience, how the workflow scales",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-002-community-resilience-002",
+    "file": "Creator Systems Episode 002 — community resilience",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores community resilience with a focus on how the workflow scales. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "community resilience",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, community resilience, how the workflow scales",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-003-community-resilience-003",
+    "file": "Creator Systems Episode 003 — community resilience",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores community resilience with a focus on how the workflow scales. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "community resilience",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, community resilience, how the workflow scales",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-004-community-resilience-004",
+    "file": "Creator Systems Episode 004 — community resilience",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores community resilience with a focus on how the workflow scales. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "community resilience",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, community resilience, how the workflow scales",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-001-community-resilience-005",
+    "file": "Creator Systems Episode 001 — community resilience",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores community resilience with a focus on where search becomes useful. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "community resilience",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, community resilience, where search becomes useful",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-002-community-resilience-006",
+    "file": "Creator Systems Episode 002 — community resilience",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores community resilience with a focus on where search becomes useful. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "community resilience",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, community resilience, where search becomes useful",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-003-community-resilience-007",
+    "file": "Creator Systems Episode 003 — community resilience",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores community resilience with a focus on where search becomes useful. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "community resilience",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, community resilience, where search becomes useful",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-004-community-resilience-008",
+    "file": "Creator Systems Episode 004 — community resilience",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores community resilience with a focus on where search becomes useful. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "community resilience",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, community resilience, where search becomes useful",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-001-community-resilience-009",
+    "file": "Creator Systems Episode 001 — community resilience",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores community resilience with a focus on why smaller binaries win. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "community resilience",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, community resilience, why smaller binaries win",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-002-community-resilience-010",
+    "file": "Creator Systems Episode 002 — community resilience",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores community resilience with a focus on why smaller binaries win. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "community resilience",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, community resilience, why smaller binaries win",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-003-community-resilience-011",
+    "file": "Creator Systems Episode 003 — community resilience",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores community resilience with a focus on why smaller binaries win. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "community resilience",
+      "Creator Systems"
+    ],
     "flagged": true,
     "demo": true,
-    "outputs": ["show notes", "clip list", "article draft", "RSS-ready bundle"],
-    "outputNotes": {
-      "show notes": "Show notes are the quickest publishable output from the episode.",
-      "clip list": "Clips matter because they let one episode become many short-form entry points.",
-      "article draft": "The article draft shows how the same episode can repurpose into long-form copy.",
-      "RSS-ready bundle": "The bundle is the distribution-ready version of the same episode artifact."
-    },
-    "outputLinks": {
-      "show notes": { "href": "demos/podcast-plant/show-notes.md", "label": "Open show notes" },
-      "clip list": { "href": "demos/podcast-plant/clip-list.json", "label": "Open clip list" },
-      "article draft": { "href": "demos/podcast-plant/article-draft.md", "label": "Open article draft" },
-      "RSS-ready bundle": { "href": "demos/podcast-plant/rss-bundle.xml", "label": "Open RSS bundle" }
-    },
-    "searchSummary": "Tiny binaries, artifact contracts, GitHub control plane.",
-    "whyItMatters": "Episode search shows how multiple recordings can reuse the same repurposing path while still surfacing the right moments and outputs for each one.",
-    "searchIntro": "Search across the seeded episode set to see how the same pipeline handles different topics and still yields clips, notes, and publish-ready outputs.",
-    "searchOutputs": ["clip list", "RSS-ready bundle"]
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, community resilience, why smaller binaries win",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
   },
   {
-    "id": "demo-podcast-plant-013",
-    "file": "founder-systems-episode-013.mp3",
+    "id": "pod-creator-systems-004-community-resilience-012",
+    "file": "Creator Systems Episode 004 — community resilience",
     "time": "Demo dataset",
     "status": "complete",
-    "brief": "Episode focused on artifact-native CMS design, local-first outputs, and why prompts should not be the user interface.",
-    "tags": ["cms", "artifact-native", "show-notes"],
+    "brief": "Episode explores community resilience with a focus on why smaller binaries win. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "community resilience",
+      "Creator Systems"
+    ],
     "flagged": false,
     "demo": true,
-    "outputs": ["show notes", "article draft"],
-    "searchSummary": "Artifact-native CMS, local-first outputs, no prompt UI.",
-    "whyItMatters": "Once there are multiple episodes, search and compression stop being abstract. They become the way users revisit the right conversation quickly."
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, community resilience, why smaller binaries win",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
   },
   {
-    "id": "demo-podcast-plant-012",
-    "file": "founder-systems-episode-012.mp3",
+    "id": "pod-creator-systems-001-community-resilience-013",
+    "file": "Creator Systems Episode 001 — community resilience",
     "time": "Demo dataset",
     "status": "complete",
-    "brief": "Episode covered demo fleets, productized artifacts, and how one source recording should generate notes, clips, and release surfaces without branching into separate tools.",
-    "tags": ["clips", "publishing", "artifact-flow"],
+    "brief": "Episode explores community resilience with a focus on how one source branches cleanly. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "community resilience",
+      "Creator Systems"
+    ],
     "flagged": false,
     "demo": true,
-    "outputs": ["clip list", "show notes", "RSS-ready bundle"],
-    "searchSummary": "Demo fleets, productized artifacts, one source to many surfaces.",
-    "whyItMatters": "A multi-episode dataset makes reuse visible. The user can search related episodes instead of staring at one isolated output file."
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, community resilience, how one source branches cleanly",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-002-community-resilience-014",
+    "file": "Creator Systems Episode 002 — community resilience",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores community resilience with a focus on how one source branches cleanly. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "community resilience",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, community resilience, how one source branches cleanly",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-003-community-resilience-015",
+    "file": "Creator Systems Episode 003 — community resilience",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores community resilience with a focus on how one source branches cleanly. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "community resilience",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, community resilience, how one source branches cleanly",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-004-community-resilience-016",
+    "file": "Creator Systems Episode 004 — community resilience",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores community resilience with a focus on how one source branches cleanly. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "community resilience",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, community resilience, how one source branches cleanly",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-001-community-resilience-017",
+    "file": "Creator Systems Episode 001 — community resilience",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores community resilience with a focus on how orchestration changes the result. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "community resilience",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, community resilience, how orchestration changes the result",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-002-community-resilience-018",
+    "file": "Creator Systems Episode 002 — community resilience",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores community resilience with a focus on how orchestration changes the result. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "community resilience",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, community resilience, how orchestration changes the result",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-003-community-resilience-019",
+    "file": "Creator Systems Episode 003 — community resilience",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores community resilience with a focus on how orchestration changes the result. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "community resilience",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, community resilience, how orchestration changes the result",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-004-community-resilience-020",
+    "file": "Creator Systems Episode 004 — community resilience",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores community resilience with a focus on how orchestration changes the result. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "community resilience",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, community resilience, how orchestration changes the result",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-001-municipal-budgeting-021",
+    "file": "Creator Systems Episode 001 — municipal budgeting",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores municipal budgeting with a focus on how the workflow scales. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "municipal budgeting",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, municipal budgeting, how the workflow scales",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-002-municipal-budgeting-022",
+    "file": "Creator Systems Episode 002 — municipal budgeting",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores municipal budgeting with a focus on how the workflow scales. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "municipal budgeting",
+      "Creator Systems"
+    ],
+    "flagged": true,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, municipal budgeting, how the workflow scales",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-003-municipal-budgeting-023",
+    "file": "Creator Systems Episode 003 — municipal budgeting",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores municipal budgeting with a focus on how the workflow scales. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "municipal budgeting",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, municipal budgeting, how the workflow scales",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-004-municipal-budgeting-024",
+    "file": "Creator Systems Episode 004 — municipal budgeting",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores municipal budgeting with a focus on how the workflow scales. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "municipal budgeting",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, municipal budgeting, how the workflow scales",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-001-municipal-budgeting-025",
+    "file": "Creator Systems Episode 001 — municipal budgeting",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores municipal budgeting with a focus on where search becomes useful. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "municipal budgeting",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, municipal budgeting, where search becomes useful",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-002-municipal-budgeting-026",
+    "file": "Creator Systems Episode 002 — municipal budgeting",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores municipal budgeting with a focus on where search becomes useful. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "municipal budgeting",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, municipal budgeting, where search becomes useful",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-003-municipal-budgeting-027",
+    "file": "Creator Systems Episode 003 — municipal budgeting",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores municipal budgeting with a focus on where search becomes useful. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "municipal budgeting",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, municipal budgeting, where search becomes useful",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-004-municipal-budgeting-028",
+    "file": "Creator Systems Episode 004 — municipal budgeting",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores municipal budgeting with a focus on where search becomes useful. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "municipal budgeting",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, municipal budgeting, where search becomes useful",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-001-municipal-budgeting-029",
+    "file": "Creator Systems Episode 001 — municipal budgeting",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores municipal budgeting with a focus on why smaller binaries win. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "municipal budgeting",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, municipal budgeting, why smaller binaries win",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-002-municipal-budgeting-030",
+    "file": "Creator Systems Episode 002 — municipal budgeting",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores municipal budgeting with a focus on why smaller binaries win. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "municipal budgeting",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, municipal budgeting, why smaller binaries win",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-003-municipal-budgeting-031",
+    "file": "Creator Systems Episode 003 — municipal budgeting",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores municipal budgeting with a focus on why smaller binaries win. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "municipal budgeting",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, municipal budgeting, why smaller binaries win",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-004-municipal-budgeting-032",
+    "file": "Creator Systems Episode 004 — municipal budgeting",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores municipal budgeting with a focus on why smaller binaries win. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "municipal budgeting",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, municipal budgeting, why smaller binaries win",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-001-municipal-budgeting-033",
+    "file": "Creator Systems Episode 001 — municipal budgeting",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores municipal budgeting with a focus on how one source branches cleanly. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "municipal budgeting",
+      "Creator Systems"
+    ],
+    "flagged": true,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, municipal budgeting, how one source branches cleanly",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-002-municipal-budgeting-034",
+    "file": "Creator Systems Episode 002 — municipal budgeting",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores municipal budgeting with a focus on how one source branches cleanly. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "municipal budgeting",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, municipal budgeting, how one source branches cleanly",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-003-municipal-budgeting-035",
+    "file": "Creator Systems Episode 003 — municipal budgeting",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores municipal budgeting with a focus on how one source branches cleanly. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "municipal budgeting",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, municipal budgeting, how one source branches cleanly",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-004-municipal-budgeting-036",
+    "file": "Creator Systems Episode 004 — municipal budgeting",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores municipal budgeting with a focus on how one source branches cleanly. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "municipal budgeting",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, municipal budgeting, how one source branches cleanly",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-001-municipal-budgeting-037",
+    "file": "Creator Systems Episode 001 — municipal budgeting",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores municipal budgeting with a focus on how orchestration changes the result. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "municipal budgeting",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, municipal budgeting, how orchestration changes the result",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-002-municipal-budgeting-038",
+    "file": "Creator Systems Episode 002 — municipal budgeting",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores municipal budgeting with a focus on how orchestration changes the result. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "municipal budgeting",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, municipal budgeting, how orchestration changes the result",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-003-municipal-budgeting-039",
+    "file": "Creator Systems Episode 003 — municipal budgeting",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores municipal budgeting with a focus on how orchestration changes the result. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "municipal budgeting",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, municipal budgeting, how orchestration changes the result",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-004-municipal-budgeting-040",
+    "file": "Creator Systems Episode 004 — municipal budgeting",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores municipal budgeting with a focus on how orchestration changes the result. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "municipal budgeting",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, municipal budgeting, how orchestration changes the result",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-001-small-team-shipping-041",
+    "file": "Creator Systems Episode 001 — small-team shipping",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores small-team shipping with a focus on how the workflow scales. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "small-team shipping",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, small-team shipping, how the workflow scales",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-002-small-team-shipping-042",
+    "file": "Creator Systems Episode 002 — small-team shipping",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores small-team shipping with a focus on how the workflow scales. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "small-team shipping",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, small-team shipping, how the workflow scales",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-003-small-team-shipping-043",
+    "file": "Creator Systems Episode 003 — small-team shipping",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores small-team shipping with a focus on how the workflow scales. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "small-team shipping",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, small-team shipping, how the workflow scales",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-004-small-team-shipping-044",
+    "file": "Creator Systems Episode 004 — small-team shipping",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores small-team shipping with a focus on how the workflow scales. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "small-team shipping",
+      "Creator Systems"
+    ],
+    "flagged": true,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, small-team shipping, how the workflow scales",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-001-small-team-shipping-045",
+    "file": "Creator Systems Episode 001 — small-team shipping",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores small-team shipping with a focus on where search becomes useful. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "small-team shipping",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, small-team shipping, where search becomes useful",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-002-small-team-shipping-046",
+    "file": "Creator Systems Episode 002 — small-team shipping",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores small-team shipping with a focus on where search becomes useful. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "small-team shipping",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, small-team shipping, where search becomes useful",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-003-small-team-shipping-047",
+    "file": "Creator Systems Episode 003 — small-team shipping",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores small-team shipping with a focus on where search becomes useful. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "small-team shipping",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, small-team shipping, where search becomes useful",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-004-small-team-shipping-048",
+    "file": "Creator Systems Episode 004 — small-team shipping",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores small-team shipping with a focus on where search becomes useful. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "small-team shipping",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, small-team shipping, where search becomes useful",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-001-small-team-shipping-049",
+    "file": "Creator Systems Episode 001 — small-team shipping",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores small-team shipping with a focus on why smaller binaries win. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "small-team shipping",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, small-team shipping, why smaller binaries win",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-002-small-team-shipping-050",
+    "file": "Creator Systems Episode 002 — small-team shipping",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores small-team shipping with a focus on why smaller binaries win. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "small-team shipping",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, small-team shipping, why smaller binaries win",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-003-small-team-shipping-051",
+    "file": "Creator Systems Episode 003 — small-team shipping",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores small-team shipping with a focus on why smaller binaries win. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "small-team shipping",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, small-team shipping, why smaller binaries win",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-004-small-team-shipping-052",
+    "file": "Creator Systems Episode 004 — small-team shipping",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores small-team shipping with a focus on why smaller binaries win. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "small-team shipping",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, small-team shipping, why smaller binaries win",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-001-small-team-shipping-053",
+    "file": "Creator Systems Episode 001 — small-team shipping",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores small-team shipping with a focus on how one source branches cleanly. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "small-team shipping",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, small-team shipping, how one source branches cleanly",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-002-small-team-shipping-054",
+    "file": "Creator Systems Episode 002 — small-team shipping",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores small-team shipping with a focus on how one source branches cleanly. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "small-team shipping",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, small-team shipping, how one source branches cleanly",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-003-small-team-shipping-055",
+    "file": "Creator Systems Episode 003 — small-team shipping",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores small-team shipping with a focus on how one source branches cleanly. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "small-team shipping",
+      "Creator Systems"
+    ],
+    "flagged": true,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, small-team shipping, how one source branches cleanly",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-004-small-team-shipping-056",
+    "file": "Creator Systems Episode 004 — small-team shipping",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores small-team shipping with a focus on how one source branches cleanly. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "small-team shipping",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, small-team shipping, how one source branches cleanly",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-001-small-team-shipping-057",
+    "file": "Creator Systems Episode 001 — small-team shipping",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores small-team shipping with a focus on how orchestration changes the result. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "small-team shipping",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, small-team shipping, how orchestration changes the result",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-002-small-team-shipping-058",
+    "file": "Creator Systems Episode 002 — small-team shipping",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores small-team shipping with a focus on how orchestration changes the result. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "small-team shipping",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, small-team shipping, how orchestration changes the result",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-003-small-team-shipping-059",
+    "file": "Creator Systems Episode 003 — small-team shipping",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores small-team shipping with a focus on how orchestration changes the result. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "small-team shipping",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, small-team shipping, how orchestration changes the result",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-004-small-team-shipping-060",
+    "file": "Creator Systems Episode 004 — small-team shipping",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores small-team shipping with a focus on how orchestration changes the result. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "small-team shipping",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, small-team shipping, how orchestration changes the result",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-001-creator-workflows-061",
+    "file": "Creator Systems Episode 001 — creator workflows",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores creator workflows with a focus on how the workflow scales. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "creator workflows",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, creator workflows, how the workflow scales",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-002-creator-workflows-062",
+    "file": "Creator Systems Episode 002 — creator workflows",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores creator workflows with a focus on how the workflow scales. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "creator workflows",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, creator workflows, how the workflow scales",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-003-creator-workflows-063",
+    "file": "Creator Systems Episode 003 — creator workflows",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores creator workflows with a focus on how the workflow scales. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "creator workflows",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, creator workflows, how the workflow scales",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-004-creator-workflows-064",
+    "file": "Creator Systems Episode 004 — creator workflows",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores creator workflows with a focus on how the workflow scales. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "creator workflows",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, creator workflows, how the workflow scales",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-001-creator-workflows-065",
+    "file": "Creator Systems Episode 001 — creator workflows",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores creator workflows with a focus on where search becomes useful. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "creator workflows",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, creator workflows, where search becomes useful",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-002-creator-workflows-066",
+    "file": "Creator Systems Episode 002 — creator workflows",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores creator workflows with a focus on where search becomes useful. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "creator workflows",
+      "Creator Systems"
+    ],
+    "flagged": true,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, creator workflows, where search becomes useful",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-003-creator-workflows-067",
+    "file": "Creator Systems Episode 003 — creator workflows",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores creator workflows with a focus on where search becomes useful. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "creator workflows",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, creator workflows, where search becomes useful",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-004-creator-workflows-068",
+    "file": "Creator Systems Episode 004 — creator workflows",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores creator workflows with a focus on where search becomes useful. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "creator workflows",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, creator workflows, where search becomes useful",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-001-creator-workflows-069",
+    "file": "Creator Systems Episode 001 — creator workflows",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores creator workflows with a focus on why smaller binaries win. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "creator workflows",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, creator workflows, why smaller binaries win",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-002-creator-workflows-070",
+    "file": "Creator Systems Episode 002 — creator workflows",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores creator workflows with a focus on why smaller binaries win. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "creator workflows",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, creator workflows, why smaller binaries win",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-003-creator-workflows-071",
+    "file": "Creator Systems Episode 003 — creator workflows",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores creator workflows with a focus on why smaller binaries win. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "creator workflows",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, creator workflows, why smaller binaries win",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-004-creator-workflows-072",
+    "file": "Creator Systems Episode 004 — creator workflows",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores creator workflows with a focus on why smaller binaries win. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "creator workflows",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, creator workflows, why smaller binaries win",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-001-creator-workflows-073",
+    "file": "Creator Systems Episode 001 — creator workflows",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores creator workflows with a focus on how one source branches cleanly. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "creator workflows",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, creator workflows, how one source branches cleanly",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-002-creator-workflows-074",
+    "file": "Creator Systems Episode 002 — creator workflows",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores creator workflows with a focus on how one source branches cleanly. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "creator workflows",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, creator workflows, how one source branches cleanly",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-003-creator-workflows-075",
+    "file": "Creator Systems Episode 003 — creator workflows",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores creator workflows with a focus on how one source branches cleanly. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "creator workflows",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, creator workflows, how one source branches cleanly",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-004-creator-workflows-076",
+    "file": "Creator Systems Episode 004 — creator workflows",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores creator workflows with a focus on how one source branches cleanly. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "creator workflows",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, creator workflows, how one source branches cleanly",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-001-creator-workflows-077",
+    "file": "Creator Systems Episode 001 — creator workflows",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores creator workflows with a focus on how orchestration changes the result. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "creator workflows",
+      "Creator Systems"
+    ],
+    "flagged": true,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, creator workflows, how orchestration changes the result",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-002-creator-workflows-078",
+    "file": "Creator Systems Episode 002 — creator workflows",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores creator workflows with a focus on how orchestration changes the result. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "creator workflows",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, creator workflows, how orchestration changes the result",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-003-creator-workflows-079",
+    "file": "Creator Systems Episode 003 — creator workflows",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores creator workflows with a focus on how orchestration changes the result. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "creator workflows",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, creator workflows, how orchestration changes the result",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-004-creator-workflows-080",
+    "file": "Creator Systems Episode 004 — creator workflows",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores creator workflows with a focus on how orchestration changes the result. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "creator workflows",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, creator workflows, how orchestration changes the result",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-001-artifact-native-publishing-081",
+    "file": "Creator Systems Episode 001 — artifact-native publishing",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores artifact-native publishing with a focus on how the workflow scales. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "artifact-native publishing",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, artifact-native publishing, how the workflow scales",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-002-artifact-native-publishing-082",
+    "file": "Creator Systems Episode 002 — artifact-native publishing",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores artifact-native publishing with a focus on how the workflow scales. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "artifact-native publishing",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, artifact-native publishing, how the workflow scales",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-003-artifact-native-publishing-083",
+    "file": "Creator Systems Episode 003 — artifact-native publishing",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores artifact-native publishing with a focus on how the workflow scales. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "artifact-native publishing",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, artifact-native publishing, how the workflow scales",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-004-artifact-native-publishing-084",
+    "file": "Creator Systems Episode 004 — artifact-native publishing",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores artifact-native publishing with a focus on how the workflow scales. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "artifact-native publishing",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, artifact-native publishing, how the workflow scales",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-001-artifact-native-publishing-085",
+    "file": "Creator Systems Episode 001 — artifact-native publishing",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores artifact-native publishing with a focus on where search becomes useful. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "artifact-native publishing",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, artifact-native publishing, where search becomes useful",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-002-artifact-native-publishing-086",
+    "file": "Creator Systems Episode 002 — artifact-native publishing",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores artifact-native publishing with a focus on where search becomes useful. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "artifact-native publishing",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, artifact-native publishing, where search becomes useful",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-003-artifact-native-publishing-087",
+    "file": "Creator Systems Episode 003 — artifact-native publishing",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores artifact-native publishing with a focus on where search becomes useful. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "artifact-native publishing",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, artifact-native publishing, where search becomes useful",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-004-artifact-native-publishing-088",
+    "file": "Creator Systems Episode 004 — artifact-native publishing",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores artifact-native publishing with a focus on where search becomes useful. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "artifact-native publishing",
+      "Creator Systems"
+    ],
+    "flagged": true,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, artifact-native publishing, where search becomes useful",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-001-artifact-native-publishing-089",
+    "file": "Creator Systems Episode 001 — artifact-native publishing",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores artifact-native publishing with a focus on why smaller binaries win. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "artifact-native publishing",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, artifact-native publishing, why smaller binaries win",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-002-artifact-native-publishing-090",
+    "file": "Creator Systems Episode 002 — artifact-native publishing",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores artifact-native publishing with a focus on why smaller binaries win. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "artifact-native publishing",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, artifact-native publishing, why smaller binaries win",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-003-artifact-native-publishing-091",
+    "file": "Creator Systems Episode 003 — artifact-native publishing",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores artifact-native publishing with a focus on why smaller binaries win. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "artifact-native publishing",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, artifact-native publishing, why smaller binaries win",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-004-artifact-native-publishing-092",
+    "file": "Creator Systems Episode 004 — artifact-native publishing",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores artifact-native publishing with a focus on why smaller binaries win. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "artifact-native publishing",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, artifact-native publishing, why smaller binaries win",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-001-artifact-native-publishing-093",
+    "file": "Creator Systems Episode 001 — artifact-native publishing",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores artifact-native publishing with a focus on how one source branches cleanly. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "artifact-native publishing",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, artifact-native publishing, how one source branches cleanly",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-002-artifact-native-publishing-094",
+    "file": "Creator Systems Episode 002 — artifact-native publishing",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores artifact-native publishing with a focus on how one source branches cleanly. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "artifact-native publishing",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, artifact-native publishing, how one source branches cleanly",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-003-artifact-native-publishing-095",
+    "file": "Creator Systems Episode 003 — artifact-native publishing",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores artifact-native publishing with a focus on how one source branches cleanly. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "artifact-native publishing",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, artifact-native publishing, how one source branches cleanly",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-004-artifact-native-publishing-096",
+    "file": "Creator Systems Episode 004 — artifact-native publishing",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores artifact-native publishing with a focus on how one source branches cleanly. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "artifact-native publishing",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, artifact-native publishing, how one source branches cleanly",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-001-artifact-native-publishing-097",
+    "file": "Creator Systems Episode 001 — artifact-native publishing",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores artifact-native publishing with a focus on how orchestration changes the result. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "artifact-native publishing",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, artifact-native publishing, how orchestration changes the result",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-002-artifact-native-publishing-098",
+    "file": "Creator Systems Episode 002 — artifact-native publishing",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores artifact-native publishing with a focus on how orchestration changes the result. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "artifact-native publishing",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, artifact-native publishing, how orchestration changes the result",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-003-artifact-native-publishing-099",
+    "file": "Creator Systems Episode 003 — artifact-native publishing",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores artifact-native publishing with a focus on how orchestration changes the result. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "artifact-native publishing",
+      "Creator Systems"
+    ],
+    "flagged": true,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, artifact-native publishing, how orchestration changes the result",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
+  },
+  {
+    "id": "pod-creator-systems-004-artifact-native-publishing-100",
+    "file": "Creator Systems Episode 004 — artifact-native publishing",
+    "time": "Demo dataset",
+    "status": "complete",
+    "brief": "Episode explores artifact-native publishing with a focus on how orchestration changes the result. The Bonfyre path turns the same source into notes, clips, drafts, and a publish-ready bundle.",
+    "tags": [
+      "podcast",
+      "artifact-native publishing",
+      "Creator Systems"
+    ],
+    "flagged": false,
+    "demo": true,
+    "outputs": [
+      "show notes",
+      "clip list",
+      "article draft",
+      "RSS-ready bundle"
+    ],
+    "outputNotes": {},
+    "outputLinks": {},
+    "searchSummary": "Creator Systems, artifact-native publishing, how orchestration changes the result",
+    "whyItMatters": "With many seeded episodes, users can feel how Bonfyre clusters topics, reuses artifacts, and branches outputs without changing the core source object.",
+    "searchIntro": "Search across many seeded episodes to compare topics, clips, and publish surfaces from one shared Bonfyre pipeline.",
+    "searchOutputs": [
+      "clip list",
+      "RSS-ready bundle"
+    ]
   }
 ]
