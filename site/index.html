@@ -70,6 +70,7 @@
       <h1>Podcast Repurposing Plant</h1>
       <span class="badge badge-live" id="statusBadge">LIVE</span>
       <div class="header-right">
+        <button class="btn btn-ghost" id="toggleDemoBtn" type="button">Clear Demo Data</button>
         <button class="btn btn-ghost" onclick="toggleConfig()">Settings</button>
       </div>
     </header>
@@ -365,6 +366,16 @@
 
     initBriefWorker();
     renderBoard();
+  </script>
+  <script src="js/demo-boot.js"></script>
+  <script>
+    BonfyreDemoBoot.init({
+      storeKey: ITEMS_KEY,
+      demoPath: 'demos/podcast-plant/demo-item.json',
+      getItems: () => items,
+      setItems: value => { items = value; },
+      renderBoard: renderBoard
+    });
   </script>
 </body>
 </html>
