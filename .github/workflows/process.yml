@@ -27,8 +27,10 @@ jobs:
           sudo apt-get update -qq
           sudo apt-get install -y -qq libsqlite3-dev pandoc
           git clone --depth 1 https://github.com/Nickgonzales76017/bonfyre-oss.git /tmp/bonfyre
-          cd /tmp/bonfyre && make -j$(nproc) 2>&1 | tail -3
-          sudo make install
+          chmod +x /tmp/bonfyre/scripts/build-portable-runtime.sh
+          /tmp/bonfyre/scripts/build-portable-runtime.sh \
+            BonfyreBrief BonfyreTag BonfyreNarrate BonfyreRender BonfyrePack BonfyreEmit
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
 
       - name: Detect new files
         id: detect
@@ -58,12 +60,10 @@ jobs:
             ext="${f##*.}"
             case "$ext" in
               wav|mp3|m4a|ogg|flac|webm)
-                bonfyre-media-prep "$f" --out "artifacts/${base}.prep.json"
-                bonfyre-transcribe "artifacts/${base}.prep.json" --out "artifacts/${base}.transcript.json"
-                bonfyre-transcript-clean "artifacts/${base}.transcript.json" --out "artifacts/${base}.clean.json"
-                bonfyre-paragraph "artifacts/${base}.clean.json" --out "artifacts/${base}.paragraphs.json"
-                bonfyre-brief "artifacts/${base}.paragraphs.json" --out "artifacts/${base}.brief.json"
-                bonfyre-clips "artifacts/${base}.transcript.json" --out "artifacts/${base}.clips.json"
+                echo "Skipping raw audio on portable runner: $f"
+                ;;
+              md|txt|json)
+                bonfyre-brief "$f" --out "artifacts/${base}.brief.json"
                 bonfyre-tag "artifacts/${base}.brief.json" --out "artifacts/${base}.tags.json"
                 bonfyre-narrate "artifacts/${base}.brief.json" --out "artifacts/${base}.narrate.json"
                 bonfyre-render "artifacts/${base}.narrate.json" --template episode --out "site/episodes/${base}.html"
