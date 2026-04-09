@@ -66,5 +66,43 @@
       "label": "Open RSS-ready bundle"
     }
   },
+  "compare": {
+    "title": "With And Without The New Layer",
+    "note": "The floor already turns one episode into a usable summary surface. The orchestration layer earns its place only when it fans that same artifact into more publish-ready outputs without changing the source object.",
+    "floor": {
+      "kicker": "Deterministic Floor",
+      "title": "Episode summary and structure only",
+      "copy": "This is the always-on path: transcript cleanup, paragraph structure, and the brief. It gets you the episode object and readable notes without the extra distribution fanout.",
+      "modules": ["bonfyre-transcribe", "bonfyre-transcript-clean", "bonfyre-paragraph", "bonfyre-brief"],
+      "metrics": {
+        "policy score": "0.582",
+        "latency": "0.338",
+        "utility": "0.721",
+        "outputs": "1 core surface"
+      },
+      "outputs": ["show notes"],
+      "links": [
+        { "href": "demos/podcast-plant/show-notes.md", "label": "Open floor artifact" }
+      ]
+    },
+    "layered": {
+      "kicker": "Orchestrated Layer",
+      "title": "Same episode, full repurposing fanout",
+      "copy": "When the policy layer clears its gates, the same episode artifact branches into clips, article copy, and a feed-ready bundle. Bonfyre stays composable because the source artifact never changes.",
+      "modules": ["bonfyre-brief", "bonfyre-clips", "bonfyre-render", "bonfyre-pack", "bonfyre-emit"],
+      "metrics": {
+        "policy score": "0.641",
+        "uplift": "+0.059",
+        "latency delta": "+0.086",
+        "outputs": "4 realized surfaces"
+      },
+      "outputs": ["show notes", "clip list", "article draft", "RSS-ready bundle"],
+      "links": [
+        { "href": "demos/podcast-plant/clip-list.json", "label": "Open clip list" },
+        { "href": "demos/podcast-plant/article-draft.md", "label": "Open article draft" },
+        { "href": "demos/podcast-plant/rss-bundle.xml", "label": "Open RSS bundle" }
+      ]
+    }
+  },
   "demo": true
 }
