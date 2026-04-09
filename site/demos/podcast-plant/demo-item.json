@@ -75,10 +75,9 @@
       "copy": "This is the always-on path: transcript cleanup, paragraph structure, and the brief. It gets you the episode object and readable notes without the extra distribution fanout.",
       "modules": ["bonfyre-transcribe", "bonfyre-transcript-clean", "bonfyre-paragraph", "bonfyre-brief"],
       "metrics": {
-        "policy score": "0.582",
-        "latency": "0.338",
-        "utility": "0.721",
-        "outputs": "1 core surface"
+        "Best for": "Quick publishing prep",
+        "You get": "Show notes from one episode source",
+        "Good when": "You want the core episode summary first"
       },
       "outputs": ["show notes"],
       "links": [
@@ -91,10 +90,9 @@
       "copy": "When the policy layer clears its gates, the same episode artifact branches into clips, article copy, and a feed-ready bundle. Bonfyre stays composable because the source artifact never changes.",
       "modules": ["bonfyre-brief", "bonfyre-clips", "bonfyre-render", "bonfyre-pack", "bonfyre-emit"],
       "metrics": {
-        "policy score": "0.641",
-        "uplift": "+0.059",
-        "latency delta": "+0.086",
-        "outputs": "4 realized surfaces"
+        "Adds": "Clips, article copy, and feed packaging",
+        "Why it matters": "One episode becomes several publish-ready assets",
+        "Keeps": "A single shared artifact flow"
       },
       "outputs": ["show notes", "clip list", "article draft", "RSS-ready bundle"],
       "links": [
