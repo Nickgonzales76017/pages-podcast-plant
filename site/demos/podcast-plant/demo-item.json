@@ -10,5 +10,11 @@
   "optionalModules": ["bonfyre-narrate", "bonfyre-repurpose", "bonfyre-distribute"],
   "outputs": ["show notes", "clip list", "article draft", "RSS-ready bundle"],
   "compositionNote": "This one episode fans out into multiple deliverables with tiny single-purpose binaries. You can stop at clips, keep going to packaging, or swap in bonfyre-narrate and bonfyre-distribute without changing the rest of the stack.",
+  "outputNotes": {
+    "show notes": "bonfyre-brief and bonfyre-render generate a publishable summary layer from the cleaned transcript. This is the fastest lightweight output for an episode.",
+    "clip list": "bonfyre-clips marks reusable moments from the same episode artifact, so short-form outputs stay linked to the full transcript and summary.",
+    "article draft": "The article draft is the repurposing surface: the same transcript can become prose without rebuilding the pipeline around a separate content system.",
+    "RSS-ready bundle": "bonfyre-pack and bonfyre-emit package the episode for actual distribution. This is where the app stops being a summary demo and becomes a small publishing system."
+  },
   "demo": true
 }

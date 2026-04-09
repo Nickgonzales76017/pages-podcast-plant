@@ -375,7 +375,7 @@
       for (const h of filtered) {
         const statusColor = h.status === 'complete' ? 'var(--green)' : h.status === 'processing' ? 'var(--yellow)' : '#818cf8';
         const statusLabel = h.status === 'complete' ? '✓ Complete' : h.status === 'processing' ? '⏳ Processing…' : '↗ Ready for GitHub Upload';
-        html += `<div class="card"><h3>Episode: ${h.file}</h3><div class="card-meta"><span>${h.time}</span><span style="color:${statusColor}">${statusLabel}</span></div><div class="card-body">${h.brief || "<em style=\"color:var(--dim)\">Repurposing episode…</em>"}</div>${renderCapabilityBlock(h)}<div class="card-tags">${h.flagged ? "<span class=\"tag\" style=\"background:#1a2e1a;color:var(--green)\">PUBLISHED</span>" : ""}${(h.tags||[]).map(t=>`<span class="tag">${t}</span>`).join("")}</div></div>`;
+        html += `<div class="card" data-item-id="${escapeHtml(h.id)}"><h3>Episode: ${h.file}</h3><div class="card-meta"><span>${h.time}</span><span style="color:${statusColor}">${statusLabel}</span></div><div class="card-body">${h.brief || "<em style=\"color:var(--dim)\">Repurposing episode…</em>"}</div>${renderCapabilityBlock(h)}<div class="card-tags">${h.flagged ? "<span class=\"tag\" style=\"background:#1a2e1a;color:var(--green)\">PUBLISHED</span>" : ""}${(h.tags||[]).map(t=>`<span class="tag">${t}</span>`).join("")}</div></div>`;
 
       }
       container.innerHTML = html;
