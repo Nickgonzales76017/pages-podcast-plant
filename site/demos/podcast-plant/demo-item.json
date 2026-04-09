@@ -4,11 +4,34 @@
   "time": "Reference corpus",
   "status": "complete",
   "brief": "Episode packaged into a publish-ready summary with three clip moments: why tiny binaries outperform bloated stacks, how artifact contracts reduce handoff friction, and why GitHub can act as the control plane for lightweight products. Show notes and repurposing copy are ready for release.",
-  "tags": ["show-notes", "clips", "release-ready"],
+  "tags": [
+    "show-notes",
+    "clips",
+    "release-ready"
+  ],
   "flagged": true,
-  "modules": ["bonfyre-transcribe", "bonfyre-transcript-clean", "bonfyre-paragraph", "bonfyre-brief", "bonfyre-clips", "bonfyre-tag", "bonfyre-render", "bonfyre-pack", "bonfyre-emit"],
-  "optionalModules": ["bonfyre-narrate", "bonfyre-repurpose", "bonfyre-distribute"],
-  "outputs": ["show notes", "clip list", "article draft", "RSS-ready bundle"],
+  "modules": [
+    "bonfyre-transcribe",
+    "bonfyre-transcript-clean",
+    "bonfyre-paragraph",
+    "bonfyre-brief",
+    "bonfyre-clips",
+    "bonfyre-tag",
+    "bonfyre-render",
+    "bonfyre-pack",
+    "bonfyre-emit"
+  ],
+  "optionalModules": [
+    "bonfyre-narrate",
+    "bonfyre-repurpose",
+    "bonfyre-distribute"
+  ],
+  "outputs": [
+    "show notes",
+    "clip list",
+    "article draft",
+    "RSS-ready bundle"
+  ],
   "compositionNote": "This one episode fans out into multiple deliverables with tiny single-purpose binaries. You can stop at clips, keep going to packaging, or swap in bonfyre-narrate and bonfyre-distribute without changing the rest of the stack.",
   "moduleNotes": {
     "bonfyre-transcribe": "bonfyre-transcribe turns the source episode into the base transcript artifact that every later stage reuses.",
@@ -73,34 +96,70 @@
       "kicker": "Deterministic Floor",
       "title": "Episode summary and structure only",
       "copy": "This is the always-on path: transcript cleanup, paragraph structure, and the brief. It gets you the episode object and readable notes without the extra distribution fanout.",
-      "modules": ["bonfyre-transcribe", "bonfyre-transcript-clean", "bonfyre-paragraph", "bonfyre-brief"],
+      "modules": [
+        "bonfyre-transcribe",
+        "bonfyre-transcript-clean",
+        "bonfyre-paragraph",
+        "bonfyre-brief"
+      ],
       "metrics": {
         "Best for": "Quick publishing prep",
         "You get": "Show notes from one episode source",
         "Good when": "You want the core episode summary first"
       },
-      "outputs": ["show notes"],
+      "outputs": [
+        "show notes"
+      ],
       "links": [
-        { "href": "demos/podcast-plant/show-notes.md", "label": "Open floor artifact" }
+        {
+          "href": "demos/podcast-plant/show-notes.md",
+          "label": "Open floor artifact"
+        }
       ]
     },
     "layered": {
       "kicker": "Orchestrated Layer",
       "title": "Same episode, full repurposing fanout",
       "copy": "When the policy layer clears its gates, the same episode artifact branches into clips, article copy, and a feed-ready bundle. Bonfyre stays composable because the source artifact never changes.",
-      "modules": ["bonfyre-brief", "bonfyre-clips", "bonfyre-render", "bonfyre-pack", "bonfyre-emit"],
+      "modules": [
+        "bonfyre-brief",
+        "bonfyre-clips",
+        "bonfyre-render",
+        "bonfyre-pack",
+        "bonfyre-emit"
+      ],
       "metrics": {
         "Adds": "Clips, article copy, and feed packaging",
         "Why it matters": "One episode becomes several publish-ready assets",
         "Keeps": "A single shared artifact flow"
       },
-      "outputs": ["show notes", "clip list", "article draft", "RSS-ready bundle"],
+      "outputs": [
+        "show notes",
+        "clip list",
+        "article draft",
+        "RSS-ready bundle"
+      ],
       "links": [
-        { "href": "demos/podcast-plant/clip-list.json", "label": "Open clip list" },
-        { "href": "demos/podcast-plant/article-draft.md", "label": "Open article draft" },
-        { "href": "demos/podcast-plant/rss-bundle.xml", "label": "Open RSS bundle" }
+        {
+          "href": "demos/podcast-plant/clip-list.json",
+          "label": "Open clip list"
+        },
+        {
+          "href": "demos/podcast-plant/article-draft.md",
+          "label": "Open article draft"
+        },
+        {
+          "href": "demos/podcast-plant/rss-bundle.xml",
+          "label": "Open RSS bundle"
+        }
       ]
     }
   },
-  "demo": true
+  "demo": true,
+  "sourceUrl": "demos/podcast-plant/founder-systems-episode-014.wav",
+  "sourceTitle": "Founder Systems Episode 014 source recording",
+  "publisher": "Bonfyre reference corpus",
+  "license": "Project reference audio",
+  "sourceCopy": "Open the exact source recording Bonfyre used here, then compare it to the notes, clips, and publish-ready outputs.",
+  "sourceLabel": "Open source audio"
 }
