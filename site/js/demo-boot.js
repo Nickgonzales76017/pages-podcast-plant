@@ -61,6 +61,16 @@
     return text;
   }
 
+  function markdownToHtml(text) {
+    return escapeHtml(String(text || ''))
+      .replace(/^### (.*)$/gm, '<h4>$1</h4>')
+      .replace(/^## (.*)$/gm, '<h3>$1</h3>')
+      .replace(/^# (.*)$/gm, '<h2>$1</h2>')
+      .replace(/^\- (.*)$/gm, '<li>$1</li>')
+      .replace(/\n\n+/g, '</p><p>')
+      .replace(/(<li>.*<\/li>)/gs, '<ul>$1</ul>');
+  }
+
   function injectStyles() {
     if (document.getElementById('bonfyre-demo-boot-styles')) return;
     var style = document.createElement('style');
@@ -78,7 +88,19 @@
       '.bonfyre-demo-result strong{display:block;color:#ff6600;margin-bottom:.2rem;font-size:.8rem;}',
       '.bonfyre-demo-result span{display:block;font-size:.76rem;line-height:1.4;margin-bottom:.2rem;}',
       '.bonfyre-demo-result em{display:block;font-size:.72rem;color:#9ca3af;font-style:normal;}',
-      '.bonfyre-demo-search-empty{padding:.65rem .75rem;border:1px solid #2f3b4b;border-radius:8px;background:#0d131d;color:#9ca3af;font-size:.76rem;}'
+      '.bonfyre-demo-search-empty{padding:.65rem .75rem;border:1px solid #2f3b4b;border-radius:8px;background:#0d131d;color:#9ca3af;font-size:.76rem;}',
+      '.bonfyre-detail-card{margin-top:.75rem;padding:.85rem;border:1px solid #2f3b4b;border-radius:10px;background:#0d131d;}',
+      '.bonfyre-detail-card h4{font-size:.9rem;color:#ff6600;margin-bottom:.35rem;}',
+      '.bonfyre-detail-meta{font-size:.73rem;color:#9ca3af;margin-bottom:.45rem;}',
+      '.bonfyre-detail-copy{font-size:.8rem;line-height:1.5;color:#e5e7eb;margin-bottom:.6rem;}',
+      '.bonfyre-detail-tags{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.55rem;}',
+      '.bonfyre-detail-tag{font-size:.68rem;padding:.22rem .45rem;border-radius:999px;border:1px solid #334155;background:#111827;color:#cbd5e1;}',
+      '.bonfyre-artifact-view{margin-top:.75rem;padding:.85rem;border:1px solid #2f3b4b;border-radius:10px;background:#0d131d;}',
+      '.bonfyre-artifact-view h4{font-size:.85rem;color:#ff6600;margin-bottom:.4rem;}',
+      '.bonfyre-artifact-body{font-size:.78rem;line-height:1.5;color:#e5e7eb;max-height:320px;overflow:auto;white-space:pre-wrap;}',
+      '.bonfyre-artifact-body p{margin-bottom:.65rem;}',
+      '.bonfyre-artifact-body h2,.bonfyre-artifact-body h3,.bonfyre-artifact-body h4{color:#f8fafc;margin:.55rem 0 .3rem;}',
+      '.bonfyre-artifact-body ul{padding-left:1rem;margin:.35rem 0 .65rem;}'
     ].join('');
     document.head.appendChild(style);
   }
@@ -133,9 +155,38 @@
     if (nodes && nodes.searchRoot) nodes.searchRoot.style.display = 'none';
   }
 
+  function clearDetail(nodes) {
+    if (!nodes) return;
+    var detail = nodes.panel.querySelector('.bonfyre-detail-card');
+    if (detail) detail.remove();
+    var artifact = nodes.panel.querySelector('.bonfyre-artifact-view');
+    if (artifact) artifact.remove();
+  }
+
+  function setPreviewHtml(html, link) {
+    var nodes = ensurePreviewNodes();
+    if (!nodes) return false;
+    clearDetail(nodes);
+    nodes.panel.style.display = 'block';
+    nodes.content.innerHTML = html;
+    nodes.actions.innerHTML = '';
+    hideSearch(nodes);
+    if (link && link.href) {
+      var anchor = document.createElement('a');
+      anchor.className = 'bonfyre-preview-link';
+      anchor.href = String(link.href);
+      anchor.target = '_blank';
+      anchor.rel = 'noreferrer noopener';
+      anchor.textContent = link.label || 'Open artifact';
+      nodes.actions.appendChild(anchor);
+    }
+    return true;
+  }
+
   function setPreviewState(text, link) {
     var nodes = ensurePreviewNodes();
     if (!nodes) return false;
+    clearDetail(nodes);
     nodes.panel.style.display = 'block';
     nodes.content.textContent = String(text || '');
     nodes.actions.innerHTML = '';
@@ -155,6 +206,7 @@
   function setPreviewText(text) {
     var nodes = ensurePreviewNodes();
     if (!nodes) return false;
+    clearDetail(nodes);
     nodes.actions.innerHTML = '';
     nodes.panel.style.display = 'block';
     nodes.content.textContent = String(text || '');
@@ -166,7 +218,27 @@
     if (!link || !link.href) return false;
     var raw = await fetchText(link.href);
     if (!raw) return setPreviewState(note || 'This output is available for this demo item.', link);
-    return setPreviewState((note ? note + '\n\n' : '') + formatArtifactText(raw, link.href), link);
+    var body = formatArtifactText(raw, link.href);
+    var htmlBody = /\.md($|\?)/.test(link.href || '') ? '<div class="bonfyre-artifact-body"><p>' + markdownToHtml(body) + '</p></div>' : '<div class="bonfyre-artifact-body">' + escapeHtml(body) + '</div>';
+    return setPreviewHtml(
+      '<div class="bonfyre-artifact-view">' +
+        '<h4>' + escapeHtml(link.label || 'Artifact preview') + '</h4>' +
+        (note ? '<div class="bonfyre-detail-copy">' + escapeHtml(note) + '</div>' : '') +
+        htmlBody +
+      '</div>',
+      link
+    );
+  }
+
+  function buildDetailCard(item) {
+    return '<div class="bonfyre-detail-card">' +
+      '<h4>' + escapeHtml(item.file || 'Demo record') + '</h4>' +
+      '<div class="bonfyre-detail-meta">' + escapeHtml(item.time || 'Demo dataset') + '</div>' +
+      '<div class="bonfyre-detail-copy">' + escapeHtml(item.whyItMatters || item.brief || '') + '</div>' +
+      '<div class="bonfyre-detail-tags">' + (item.tags || []).slice(0, 5).map(function(tag) {
+        return '<span class="bonfyre-detail-tag">' + escapeHtml(tag) + '</span>';
+      }).join('') + '</div>' +
+    '</div>';
   }
 
   function scoreItemForQuery(item, query) {
@@ -207,6 +279,7 @@
   function openSearchExperience(item, label, items) {
     var nodes = ensurePreviewNodes();
     if (!nodes) return false;
+    clearDetail(nodes);
     nodes.panel.style.display = 'block';
     nodes.content.textContent = String((item && item.outputNotes && item.outputNotes[label]) || 'Search across the seeded demo dataset to see why this output matters.');
     nodes.actions.innerHTML = '';
@@ -223,7 +296,9 @@
       var targetId = button.getAttribute('data-demo-open');
       var target = cloneItems(items).find(function(entry) { return String(entry.id) === String(targetId); });
       if (!target) return;
-      setPreviewText((target.whyItMatters ? target.whyItMatters + '\n\n' : '') + String(target.brief || ''));
+      clearDetail(nodes);
+      nodes.content.textContent = String((item && item.outputNotes && item.outputNotes[label]) || 'Search across the seeded demo dataset to see why this output matters.');
+      nodes.searchRoot.insertAdjacentHTML('afterend', buildDetailCard(target));
     };
     return true;
   }
