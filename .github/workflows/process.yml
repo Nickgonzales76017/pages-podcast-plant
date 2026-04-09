@@ -29,8 +29,10 @@ jobs:
           git clone --depth 1 https://github.com/Nickgonzales76017/bonfyre-oss.git /tmp/bonfyre
           chmod +x /tmp/bonfyre/scripts/build-portable-runtime.sh
           /tmp/bonfyre/scripts/build-portable-runtime.sh \
-            BonfyreBrief BonfyreNarrate BonfyreRender BonfyrePack BonfyreEmit
+            BonfyreBrief BonfyreNarrate BonfyreRender BonfyreEmit
           echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          echo "BONFYRE_BRIEF_BINARY=$HOME/.local/bin/bonfyre-brief" >> "$GITHUB_ENV"
+          echo "BONFYRE_NARRATE_BINARY=$HOME/.local/bin/bonfyre-narrate" >> "$GITHUB_ENV"
 
       - name: Detect new files
         id: detect
@@ -63,15 +65,12 @@ jobs:
                 echo "Skipping raw audio on portable runner: $f"
                 ;;
               md|txt|json)
-                bonfyre-brief "$f" --out "artifacts/${base}.brief.json"
-                bonfyre-narrate "artifacts/${base}.brief.json" --out "artifacts/${base}.narrate.json"
-                bonfyre-render "artifacts/${base}.narrate.json" --template episode --out "site/episodes/${base}.html"
-                bonfyre-pack "artifacts/${base}.brief.json" --out "artifacts/${base}.pack.zip"
+                bonfyre-render artifact "$f" "artifacts/${base}" --title "$base"
+                bonfyre-emit "artifacts/${base}/brief" --format html --out "site/episodes/${base}.html"
+                bonfyre-emit "artifacts/${base}/brief" --format rss --out "site/feed/${base}.rss"
                 ;;
             esac
           done < /tmp/changed_files.txt
-          bonfyre-emit artifacts/ --out site/ --format html
-          bonfyre-emit artifacts/ --out site/feed/ --format rss
 
       - name: Commit results
         if: steps.detect.outputs.skip != 'true'
