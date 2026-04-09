@@ -155,11 +155,5 @@
       ]
     }
   },
-  "demo": true,
-  "sourceUrl": "demos/podcast-plant/founder-systems-episode-014.wav",
-  "sourceTitle": "Founder Systems Episode 014 source recording",
-  "publisher": "Bonfyre reference corpus",
-  "license": "Project reference audio",
-  "sourceCopy": "Open the exact source recording Bonfyre used here, then compare it to the notes, clips, and publish-ready outputs.",
-  "sourceLabel": "Open source audio"
+  "demo": true
 }
