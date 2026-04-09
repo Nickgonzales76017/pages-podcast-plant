@@ -1,6 +1,6 @@
 Founder Systems Episode 014
 
-This seeded episode demonstrates the orchestration layer on top of the Bonfyre floor.
+This reference episode demonstrates the orchestration layer on top of the Bonfyre floor.
 
 The floor keeps the artifact graph small and deterministic:
 - one source object

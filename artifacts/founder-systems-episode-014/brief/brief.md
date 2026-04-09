@@ -16,7 +16,7 @@ The orchestration layer only earns its place when it fans the same source into m
 The point is not to hide Bonfyre behind prompting.
 - Founder Systems Episode 014
 
-This seeded episode demonstrates the orchestration layer on top of the Bonfyre floor.
+This reference episode demonstrates the orchestration layer on top of the Bonfyre floor.
 
 ## Action Items
 - No action items detected
@@ -38,12 +38,12 @@ The orchestration layer only earns its place when it fans the same source into m
 The point is not to hide Bonfyre behind prompting.
   - Founder Systems Episode 014
 
-This seeded episode demonstrates the orchestration layer on top of the Bonfyre floor.
+This reference episode demonstrates the orchestration layer on top of the Bonfyre floor.
 
 ## Transcript
 Founder Systems Episode 014
 
-This seeded episode demonstrates the orchestration layer on top of the Bonfyre floor. The floor keeps the artifact graph small and deterministic:
+This reference episode demonstrates the orchestration layer on top of the Bonfyre floor. The floor keeps the artifact graph small and deterministic:
 - one source object
 - one brief
 - one renderable surface
