@@ -3,6 +3,7 @@ on:
   push:
     branches: [main]
     paths: ['input/**']
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -32,7 +33,11 @@ jobs:
       - name: Detect new files
         id: detect
         run: |
-          CHANGED=$(git diff --name-only HEAD~1 HEAD -- 'input/**' || true)
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            CHANGED=$(git ls-files 'input/**' || true)
+          else
+            CHANGED=$(git diff --name-only HEAD~1 HEAD -- 'input/**' || true)
+          fi
           if [ -z "$CHANGED" ]; then
             echo "skip=true" >> "$GITHUB_OUTPUT"
           else
