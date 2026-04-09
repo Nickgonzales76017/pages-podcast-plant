@@ -6,5 +6,9 @@
   "brief": "Episode packaged into a publish-ready summary with three clip moments: why tiny binaries outperform bloated stacks, how artifact contracts reduce handoff friction, and why GitHub can act as the control plane for lightweight products. Show notes and repurposing copy are ready for release.",
   "tags": ["show-notes", "clips", "release-ready"],
   "flagged": true,
+  "modules": ["bonfyre-transcribe", "bonfyre-transcript-clean", "bonfyre-paragraph", "bonfyre-brief", "bonfyre-clips", "bonfyre-tag", "bonfyre-render", "bonfyre-pack", "bonfyre-emit"],
+  "optionalModules": ["bonfyre-narrate", "bonfyre-repurpose", "bonfyre-distribute"],
+  "outputs": ["show notes", "clip list", "article draft", "RSS-ready bundle"],
+  "compositionNote": "This one episode fans out into multiple deliverables with tiny single-purpose binaries. You can stop at clips, keep going to packaging, or swap in bonfyre-narrate and bonfyre-distribute without changing the rest of the stack.",
   "demo": true
 }
