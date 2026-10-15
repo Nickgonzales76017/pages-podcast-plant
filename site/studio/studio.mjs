@@ -4,6 +4,7 @@ import {
   emptyProject,trimClip,wavEncode,showNotes,handoffYaff,selectedFrames
 } from "./mix-model.mjs";
 import {loadEditorialSession,SOURCES as EDITORIAL_SOURCES} from "./editorial-kit.mjs";
+import {applyTreatment} from "./editorial-presets.mjs";
 const $=id=>document.getElementById(id);
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 let project=emptyProject(),sources=new Map(),selected="",currentRevision=0,db=null;
@@ -12,6 +13,7 @@ let worker=null,requestId=0,pending=new Map(),rendered=null,audio=null,playing=n
   dirty=false,busy=false,lastRenderedRevision=-1,editRevision=0;
 const palette=["#bedfb6","#e4ca91","#85c3d4","#b7aaec","#e5ada9","#b2d2aa","#d9b67b"];
 const IDB_NAME="bonfyre-creator-native-session-v1";
+let treatment="custom";
 let micRecorder=null,micStream=null,micParts=[];
 const toast=(message,error=false)=>{
   const e=$("notice");e.textContent=message;e.style.background=error?"#f3c6bd":"#d2e6c1";
@@ -101,7 +103,7 @@ async function restoreProject(id){
  }
  validateProject(row.data.project,src);
  await resetWorker();for(const [key,s] of src)await send("source",{sourceId:key,name:s.name,pcm:s.pcm});
- sources=src;project=structuredClone(row.data.project);currentRevision=row.revision||0;dirty=false;undoStack=[];redoStack=[];
+ sources=src;project=structuredClone(row.data.project);treatment="custom";currentRevision=row.revision||0;dirty=false;undoStack=[];redoStack=[];
  selected=project.clips[0]?.id||"";editRevision++;rendered=null;
  $("save").textContent="Saved ✓";renderUI();await render();
  toast("Restored "+project.title+" from this browser.");
@@ -132,7 +134,7 @@ async function initEditorial(){
  const kit=await loadEditorialSession(audio,msg);
  await resetWorker();
  for(const [id,s] of kit.sources)await send("source",{sourceId:id,name:s.name,pcm:s.pcm});
- sources=kit.sources;project=kit.project;selected=project.clips[0]?.id||"";
+ sources=kit.sources;project=kit.project;treatment="custom";selected=project.clips[0]?.id||"";
  currentRevision=0;undoStack=[];redoStack=[];editRevision++;dirty=false;rendered=null;
  $("save").textContent="Save session";renderUI();await render();
  toast("Real editorial session loaded: narrated voice, CC0 music, location and credited Foley.");
@@ -383,6 +385,7 @@ function drawMaster(){
 function renderUI(){
  refreshMetrics();displayClip();chapterUI();renderTimeline();drawMaster();renderCredits();
  $("zoom").value=zoom;
+ $("productionTreatment").value=treatment;
 }
 function stop(){
  if(playing){playing.onended=null;try{playing.stop();}catch{}playing.disconnect();playing=null;}
@@ -504,6 +507,14 @@ $("play").addEventListener("click",()=>safe(play));
 $("stop").addEventListener("click",stop);
 $("master").addEventListener("input",e=>{const n=Number(e.target.value);if(n>=0&&n<=2){project.master=n;markDirty();$("masterValue").textContent=Math.round(n*100)+"%";}});
 $("normalize").addEventListener("change",e=>{project.normalize=e.target.checked;markDirty();});
+$("productionTreatment").addEventListener("change",e=>safe(()=>{
+ if(e.target.value==="custom"){treatment="custom";return;}
+ remember();
+ project=applyTreatment(project,sources,e.target.value);
+ treatment=e.target.value;selected=project.clips.find(c=>c.role==="voice")?.id||selected;
+ markDirty();renderUI();
+ toast("Real-source "+project.title+" cut applied. Edit clips or render the new arrangement.");
+}));
 $("autoDuck").addEventListener("change",e=>{
  project.ducking??={enabled:false,depthDb:12,thresholdDb:-37,attackMs:45,releaseMs:340};
  project.ducking.enabled=e.target.checked;markDirty();
