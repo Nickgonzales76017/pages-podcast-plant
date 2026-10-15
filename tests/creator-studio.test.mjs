@@ -65,7 +65,7 @@ test("16 bit PCM RIFF and 32 float WAV headers correctly encode stereo",()=>{
  assert.equal(pcm.getInt16(46,true),32767);assert.equal(pcm.getInt16(48,true),-32768);
  const raw=new DataView(wavEncode(frames,{format:"float32"}));
  assert.equal(raw.getUint16(20,true),3);assert.equal(raw.getUint16(34,true),32);
- assert.equal(raw.getFloat32(56,true),-1);
+ assert.equal(raw.getFloat32(52,true),-1);
  assert.throws(()=>wavEncode(new Float32Array([0,NaN])),/Nonfinite/);
 });
 test("source selection defaults to full mix and remains bounded",()=>{
