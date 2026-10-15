@@ -3,6 +3,7 @@ import {
   duration,fmt,validateProject,exampleSession,exampleAudio,sourcePeaks,
   emptyProject,trimClip,wavEncode,showNotes,handoffYaff,selectedFrames
 } from "./mix-model.mjs";
+import {loadEditorialSession,SOURCES as EDITORIAL_SOURCES} from "./editorial-kit.mjs";
 const $=id=>document.getElementById(id);
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 let project=emptyProject(),sources=new Map(),selected="",currentRevision=0,db=null;
@@ -11,6 +12,7 @@ let worker=null,requestId=0,pending=new Map(),rendered=null,audio=null,playing=n
   dirty=false,busy=false,lastRenderedRevision=-1,editRevision=0;
 const palette=["#bedfb6","#e4ca91","#85c3d4","#b7aaec","#e5ada9","#b2d2aa","#d9b67b"];
 const IDB_NAME="bonfyre-creator-native-session-v1";
+let micRecorder=null,micStream=null,micParts=[];
 const toast=(message,error=false)=>{
   const e=$("notice");e.textContent=message;e.style.background=error?"#f3c6bd":"#d2e6c1";
   e.classList.add("show");clearTimeout(toast.timer);toast.timer=setTimeout(()=>e.classList.remove("show"),3800);
@@ -82,7 +84,7 @@ async function refreshSaves(){
 async function saveProject(){
  if(!db)throw Error("Local project storage is unavailable. You can still export audio and notes.");
  validateProject(project,sources);
- const data={project:snapshot(),sources:[...sources].map(([id,s])=>[id,{name:s.name,kind:s.kind,rights:s.rights,pcm:s.pcm}])};
+ const data={project:snapshot(),sources:[...sources].map(([id,s])=>[id,{name:s.name,kind:s.kind,rights:s.rights,pcm:s.pcm,origin:s.origin,originURL:s.originURL,requiresAttribution:s.requiresAttribution,role:s.role}])};
  currentRevision=await storeProject(project.id,currentRevision,data);
  dirty=false;$("save").textContent="Saved ✓";
  await refreshSaves();$("savedProjects").value=project.id;
@@ -123,14 +125,17 @@ function send(type,extra){
   pending.set(id,{resolve,reject,timer});worker.postMessage({id,type,...extra});
  });
 }
-async function initExample(){
+async function initEditorial(){
  stop();clearTimeout(renderTimer);
- sources=exampleAudio();project=exampleSession();project.id="demo-session";selected=project.clips[0]?.id||"";currentRevision=0;
- undoStack=[];redoStack=[];editRevision++;dirty=false;rendered=null;
+ audio??=new AudioContext({sampleRate:RATE});
+ msg("Checking licensed spoken-word, music and location sources…");
+ const kit=await loadEditorialSession(audio,msg);
  await resetWorker();
- for(const [id,s] of sources)await send("source",{sourceId:id,name:s.name,pcm:s.pcm});
+ for(const [id,s] of kit.sources)await send("source",{sourceId:id,name:s.name,pcm:s.pcm});
+ sources=kit.sources;project=kit.project;selected=project.clips[0]?.id||"";
+ currentRevision=0;undoStack=[];redoStack=[];editRevision++;dirty=false;rendered=null;
  $("save").textContent="Save session";renderUI();await render();
- toast("Four synthetic source stems loaded. Edit the timeline or import your recording.");
+ toast("Real editorial session loaded: narrated voice, CC0 music, location and credited Foley.");
 }
 async function importAudio(files){
  if(!files?.length)return;
@@ -157,13 +162,13 @@ async function importAudio(files){
   }
   total+=pcm.length;if(total>MAX_SOURCE_FLOATS)throw Error("Source memory exceeded; try shorter recordings.");
   const id="src-"+crypto.randomUUID().slice(0,12),name=file.name.replace(/[\u0000-\u001f]/g," ").slice(0,90);
-  imported.push([id,{name,pcm,kind:"user-supplied",rights:"unreviewed",peaks:sourcePeaks(pcm)}]);
+  imported.push([id,{name,pcm,kind:"user-supplied",rights:"unreviewed",role:"voice",origin:"Local user recording",originURL:"",requiresAttribution:false,peaks:sourcePeaks(pcm)}]);
  }
  remember();
  for(const [id,s] of imported){
   await send("source",{sourceId:id,name:s.name,pcm:s.pcm});sources.set(id,s);
   const at=project.clips.length?Math.max(0,Math.min(duration(project),MAX_SECONDS-s.pcm.length/(RATE*2))):0;
-  const clip={id:"clip-"+crypto.randomUUID().slice(0,12),sourceId:id,label:s.name,
+  const clip={id:"clip-"+crypto.randomUUID().slice(0,12),sourceId:id,label:s.name,role:"voice",
     at,start:0,end:s.pcm.length/(RATE*2),gain:1,pan:0,fadeIn:.03,fadeOut:.03,
     mute:false,solo:false,tint:palette[project.clips.length%palette.length]};
   project.clips.push(clip);selected=clip.id;
@@ -180,6 +185,10 @@ function refreshMetrics(){
  $("totalTime").textContent="/ "+fmt(duration(project));
  $("master").value=project.master;$("masterValue").textContent=Math.round(project.master*100)+"%";
  $("normalize").checked=Boolean(project.normalize);
+ $("autoDuck").checked=Boolean(project.ducking?.enabled);
+ $("duckDepth").value=project.ducking?.depthDb??12;
+ $("duckValue").textContent=(project.ducking?.depthDb??12)+" dB";
+ $("voiceHP").checked=project.voiceHighpass!==false;
  $("undo").disabled=!undoStack.length;$("redo").disabled=!redoStack.length;
  $("chapterCount").textContent=String(project.chapters.length);
  $("sessionNotes").value=project.notes;
@@ -190,6 +199,7 @@ function displayClip(){
  if(!clip)return;
  $("clipSwatch").style.background=clip.tint;$("clipName").textContent=clip.label;
  $("clipSource").textContent=sourceOf(clip)?.name||"Source missing";
+ $("clipRole").value=clip.role||"other";
  const map={clipLabel:"label",clipAt:"at",clipStart:"start",clipEnd:"end",
   clipGain:"gain",clipPan:"pan",clipFadeIn:"fadeIn",clipFadeOut:"fadeOut"};
  for(const [id,key] of Object.entries(map))$(id).value=clip[key];
@@ -242,14 +252,14 @@ function renderTimeline(){
  setCursor();
  const root=$("lanes");root.replaceChildren();
  if(!project.clips.length){const e=document.createElement("div");e.className="empty-timeline";
-  e.textContent="The session is open. Import an audio file or load the synthetic example.";root.append(e);return;}
+  e.textContent="Import a real recording or open the licensed editorial source session.";root.append(e);return;}
  const anySolo=project.clips.some(c=>c.solo&&!c.mute);
  for(const c of project.clips){
   const lane=document.createElement("div");lane.className="lane";
   const label=document.createElement("div");label.className="lane-label";
   label.innerHTML='<div class="lane-name"><span class="swatch"></span><div><strong></strong><small></small></div></div><div class="lane-button-row"><button data-mute aria-label="Mute clip">M</button><button data-solo aria-label="Solo clip">S</button></div>';
   label.querySelector(".swatch").style.background=c.tint;label.querySelector("strong").textContent=c.label;
-  label.querySelector("small").textContent=fmt(c.end-c.start)+" · "+sourceOf(c)?.kind;
+  label.querySelector("small").textContent=(c.role||"audio")+" · "+fmt(c.end-c.start)+" · "+sourceOf(c)?.kind;
   const mute=label.querySelector("[data-mute]"),solo=label.querySelector("[data-solo]");
   mute.setAttribute("aria-pressed",String(c.mute));solo.setAttribute("aria-pressed",String(c.solo));
   mute.addEventListener("click",()=>safe(()=>{remember();c.mute=!c.mute;markDirty();renderTimeline();displayClip();}));
@@ -372,7 +382,7 @@ function exportWav(format,prepared=false){
  return filename;
 }
 $("audioFiles").addEventListener("change",e=>safe(async()=>{await importAudio([...e.target.files]);e.target.value="";}));
-$("loadDemo").addEventListener("click",()=>safe(initExample));
+$("loadDemo").addEventListener("click",()=>safe(initEditorial));
 $("sessionTitle").addEventListener("change",e=>safe(()=>{
  const title=e.target.value.trim().slice(0,100)||"Untitled session";
  remember();project.title=title;markDirty();refreshMetrics();
