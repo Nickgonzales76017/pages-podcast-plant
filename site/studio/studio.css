@@ -32,3 +32,9 @@ footer{border-top:1px solid var(--line);display:flex;gap:18px;justify-content:sp
 .credits #sourceCredits a{color:#aee3b9;overflow-wrap:anywhere}
 .credits>a{font-size:11px}
 @media(max-width:900px){.transport-mix{justify-content:flex-start}}
+
+
+/* Editor waveform follows exact source PCM and remains visible to non-canvas inspectors. */
+.clip .wave-profile{display:block;position:absolute;bottom:0;left:0;width:100%;height:53px;pointer-events:none;opacity:.86;z-index:2}
+.clip .wave-profile path{vector-effect:non-scaling-stroke}
+.credits .source-hash{display:block;color:#8bbaa0;overflow-wrap:anywhere;font:10px var(--mono);margin-top:5px;line-height:1.5}
