@@ -96,6 +96,13 @@ function renderCredits(){
   strong.textContent=s.origin||s.name;
   const d=document.createElement("span");d.textContent=(s.rights||"Rights unreviewed")+(s.requiresAttribution?" · REQUIRED CREDIT ON REDISTRIBUTION":"");
   row.append(strong,d);
+  if(typeof s.sha256==="string"&&/^[a-f0-9]{64}$/.test(s.sha256)){
+   const fingerprint=document.createElement("code");
+   fingerprint.textContent=" SHA-256: "+s.sha256;
+   fingerprint.style.display="block";fingerprint.style.fontSize="10px";
+   fingerprint.style.color="#adcdb3";fingerprint.style.overflowWrap="anywhere";
+   row.append(fingerprint);
+  }
   if(s.originURL&&s.originURL.startsWith("https://")){
    const link=document.createElement("a");link.href=s.originURL;link.target="_blank";
    link.rel="noopener noreferrer";link.textContent=" · Original source ↗";row.append(link);
@@ -192,7 +199,7 @@ async function replaceNarration(file){
  for(let f=0;f<audio.length;f++){pcm[f*2]=l[f];pcm[f*2+1]=r[f];}
  const source=sources.get("real-reading");
  source.name="Your recording: "+file.name;source.pcm=pcm;source.kind="local narration";source.rights="Rights not established";
- source.origin="Imported by this visitor";source.originURL="";source.requiresAttribution=false;
+ source.origin="Imported by this visitor";source.originURL="";source.requiresAttribution=false;source.sha256=null;
  const clip=clipByRole("voice");clip.end=audio.length/RATE;
  if(clip.at+clip.end>MAX_SECONDS)clip.at=0;
  if(clip.at+clip.end>MAX_SECONDS)throw Error("Narration cannot fit this session.");
@@ -214,7 +221,7 @@ async function continueToStudio(){
  });
  const data={project:structuredClone(project),
   sources:[...sources].map(([key,s])=>[key,{name:s.name,kind:s.kind,rights:s.rights,
-    origin:s.origin,originURL:s.originURL,role:s.role,requiresAttribution:s.requiresAttribution,pcm:s.pcm}])};
+    origin:s.origin,originURL:s.originURL,role:s.role,requiresAttribution:s.requiresAttribution,sha256:s.sha256,pcm:s.pcm}])};
  await new Promise((resolve,reject)=>{
   const tx=db.transaction("projects","readwrite");
   tx.objectStore("projects").add({id,revision:1,updatedAt:Date.now(),data},id);
