@@ -1,7 +1,7 @@
 /* A compact, real-content production surface over the same native C/Wasm
  * mixer as the full Creator Studio. No uploads or auto-publication.
  */
-import {RATE,MAX_SOURCE_FLOATS,fmt,wavEncode,showNotes,selectedFrames,validateProject} from "../mix-model.mjs";
+import {RATE,MAX_SECONDS,MAX_SOURCE_FLOATS,fmt,wavEncode,showNotes,selectedFrames,validateProject} from "../mix-model.mjs";
 import {loadEditorialSession} from "../editorial-kit.mjs";
 const $=id=>document.getElementById(id);
 let project=null,sources=new Map(),worker=null,context=null,playing=null,rendered=null,playStarted=0;
