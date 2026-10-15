@@ -5,6 +5,7 @@
 import {createNativeMixer} from "./native-kernel.mjs";
 import {RATE,MAX_SECONDS,MAX_CLIPS,MAX_SOURCES,MAX_SOURCE_FLOATS,
   validateProject,duration,clipFrame,panGains,isAudible,envelope} from "./mix-model.mjs";
+import {highpassPCM,duckingGainCurve,DUCK_STRIDE} from "./audio-production.mjs";
 const sources=new Map();
 let desired=0,mixerPromise=createNativeMixer(),kernelVersion="";
 const send=(type,body)=>postMessage({type,...body});
@@ -31,6 +32,12 @@ self.addEventListener("message",async ({data})=>{
   const frames=Math.ceil(duration(project)*RATE);
   if(frames>MAX_SECONDS*RATE)throw Error("Output is longer than three minutes.");
   const output=new Float32Array(frames*2),clips=project.clips.map(c=>({...c,...clipFrame(c)}));
+  const sidechain=duckingGainCurve(project,sources,frames);
+  const filtered=new Map();
+  for(const c of project.clips)if(c.role==="voice"&&project.voiceHighpass!==false){
+    const original=sources.get(c.sourceId)?.pcm;
+    if(original&&!filtered.has(c.sourceId))filtered.set(c.sourceId,highpassPCM(original));
+  }
   const hasSolo=project.clips.some(c=>c.solo&&!c.mute);
   let peak=0,energy=0,overs=0;
   const blockCount=Math.ceil(frames/1024),chunk=128;
@@ -41,11 +48,13 @@ self.addEventListener("message",async ({data})=>{
     if(!isAudible(c,hasSolo))continue;
     const lo=Math.max(at,c.at),hi=Math.min(at+count,c.at+c.to-c.from);
     if(hi<=lo)continue;
-    const body=new Float32Array((hi-lo)*2),source=sources.get(c.sourceId).pcm;
+    const body=new Float32Array((hi-lo)*2),
+      source=filtered.get(c.sourceId)||sources.get(c.sourceId).pcm;
     const pan=panGains(c.pan);
     for(let f=lo;f<hi;f++){
      const sourceFrame=c.from+f-c.at,index=(f-lo)*2;
-     const env=envelope(c,sourceFrame/RATE)*c.gain;
+     const duck=c.role==="music"?sidechain[Math.floor(f/DUCK_STRIDE)]:1;
+     const env=envelope(c,sourceFrame/RATE)*c.gain*duck;
      body[index]=source[sourceFrame*2]*env*pan.left;
      body[index+1]=source[sourceFrame*2+1]*env*pan.right;
     }
@@ -63,9 +72,9 @@ self.addEventListener("message",async ({data})=>{
   }
   const prePeak=peak;let normalization=1;
   if(project.normalize&&peak>0){
-   normalization=.97/peak;
+   normalization=Math.pow(10,-1/20)/peak;
    for(let i=0;i<output.length;i++)output[i]*=normalization;
-   peak=.97;overs=0;
+   peak=Math.pow(10,-1/20);overs=0;
   }
   const rms=Math.sqrt(energy/output.length)*(project.normalize?normalization:1);
   const array=output.buffer;
