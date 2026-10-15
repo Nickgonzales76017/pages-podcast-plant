@@ -563,7 +563,14 @@ Object.defineProperty(window,"aurekaiCreatorWitness",{get:()=>publicSnapshot});
 (async()=>{
  try{
   configureWorker();db=await openDB().catch(()=>null);
-  await refreshSaves();await initEditorial();
+  await refreshSaves();
+  const handedOff=new URL(location.href).searchParams.get("open");
+  if(handedOff&&/^quick-radio-[a-f0-9-]{8,40}$/.test(handedOff)&&db){
+    await restoreProject(handedOff);
+    toast("Your Quick Mix audio, clip roles and source credits were handed into the full Creator Studio.");
+  } else if(handedOff){
+    throw Error("The Quick Mix session was not found in this browser. Use the Quick Mix handoff on the same device.");
+  } else await initEditorial();
   $("kernelStatus").textContent="Native C/WASM · sourced audio verified";
  }catch(error){
   $("kernelStatus").textContent="Local editor · source kit unavailable";
