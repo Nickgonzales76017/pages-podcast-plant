@@ -1,0 +1,30 @@
+name: Creator Studio native checks
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'site/studio/**'
+      - 'tests/creator-studio.test.mjs'
+      - '.github/workflows/creator-studio-checks.yml'
+  pull_request:
+    paths:
+      - 'site/studio/**'
+      - 'tests/creator-studio.test.mjs'
+permissions:
+  contents: read
+jobs:
+  native-browser-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate native C/Wasm browser modules
+        run: |
+          node --check site/studio/native-kernel.mjs
+          node --check site/studio/mix-model.mjs
+          node --check site/studio/mix-worker.mjs
+          node --check site/studio/studio.mjs
+      - name: Run deterministic native mix, WAV and clip contracts
+        run: node --test tests/creator-studio.test.mjs
