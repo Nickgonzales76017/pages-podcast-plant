@@ -406,6 +406,50 @@ function exportWav(format,prepared=false){
  return filename;
 }
 $("audioFiles").addEventListener("change",e=>safe(async()=>{await importAudio([...e.target.files]);e.target.value="";}));
+
+async function startNarrationRecording(){
+ if(!navigator.mediaDevices?.getUserMedia||typeof MediaRecorder!=="function")
+  throw Error("This browser cannot record audio. Import an existing WAV instead.");
+ if(micRecorder?.state==="recording")throw Error("Recording is already running.");
+ if(sources.size>=MAX_SOURCES||project.clips.length>=MAX_CLIPS)
+  throw Error("Remove an unused source before recording another take.");
+ micStream=await navigator.mediaDevices.getUserMedia({audio:{
+  echoCancellation:true,noiseSuppression:true,autoGainControl:false
+ }});
+ const preferred=["audio/webm;codecs=opus","audio/mp4","audio/webm","audio/ogg"];
+ const mimeType=preferred.find(t=>MediaRecorder.isTypeSupported(t));
+ if(!mimeType){micStream.getTracks().forEach(t=>t.stop());throw Error("No supported recording codec.");}
+ micParts=[];micRecorder=new MediaRecorder(micStream,{mimeType});
+ micRecorder.addEventListener("dataavailable",e=>{if(e.data?.size)micParts.push(e.data);});
+ micRecorder.addEventListener("error",()=>{
+  $("recordMic").classList.remove("recording");
+  $("stopMic").hidden=true;$("recordMic").hidden=false;
+  micStream?.getTracks().forEach(t=>t.stop());
+  toast("Microphone recording failed.",true);
+ });
+ micRecorder.addEventListener("stop",()=>safe(async()=>{
+  const type=micRecorder.mimeType;
+  const parts=micParts.slice();micParts=[];
+  micStream?.getTracks().forEach(t=>t.stop());micStream=null;
+  $("stopMic").hidden=true;$("recordMic").hidden=false;
+  $("recordMic").classList.remove("recording");
+  if(!parts.length)throw Error("No recorded audio was captured.");
+  const blob=new Blob(parts,{type});
+  const suffix=/mp4/.test(type)?"m4a":/ogg/.test(type)?"ogg":"webm";
+  const file=new File([blob],"Narration take "+new Date().toISOString().replace(/[:.]/g,"-")+"."+suffix,{type});
+  await importAudio([file]);toast("Narration take added as an editable local source.");
+ }));
+ micRecorder.start(600);
+ $("recordMic").hidden=true;$("stopMic").hidden=false;
+ $("recordMic").classList.add("recording");
+ toast("Microphone recording is local. Press Stop recording to add the take.");
+}
+$("recordMic").addEventListener("click",()=>safe(startNarrationRecording));
+$("stopMic").addEventListener("click",()=>safe(()=>{
+ if(!micRecorder||micRecorder.state!=="recording")throw Error("No recording active.");
+ micRecorder.stop();
+}));
+
 $("loadDemo").addEventListener("click",()=>safe(initEditorial));
 $("sessionTitle").addEventListener("change",e=>safe(()=>{
  const title=e.target.value.trim().slice(0,100)||"Untitled session";
@@ -508,7 +552,7 @@ $("preparePodcast").addEventListener("click",()=>safe(()=>{
  toast("Podcast intake audio prepared locally.");
 }));
 new ResizeObserver(()=>{drawMaster();}).observe($("masterWave"));
-addEventListener("pagehide",()=>{stop();worker?.terminate();audio?.close();});
+addEventListener("pagehide",()=>{stop();if(micRecorder?.state==="recording")micRecorder.stop();micStream?.getTracks().forEach(t=>t.stop());worker?.terminate();audio?.close();});
 const publicSnapshot=()=>({
  title:project.title,sources:sources.size,clips:project.clips.length,chapters:project.chapters.length,
  duration:duration(project),rendered:Boolean(rendered),kernel:$("kernelStatus").textContent,
