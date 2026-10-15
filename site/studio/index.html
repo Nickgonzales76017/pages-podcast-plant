@@ -21,7 +21,7 @@
   <section class="intro">
     <div class="eyebrow">CREATOR / NATIVE MULTITRACK WORKSTATION</div>
     <div class="intro-grid"><div><h1>Make the <em>whole piece.</em></h1>
-      <p>Bring your own recording, place it against other sounds, carve out a scene, hear the edit and take a finished cut into your publishing flow.</p>
+      <p>Start with a real public-domain spoken-word recording, licensed lo-fi music and location sounds—or bring your own voice. Shape the interview, documentary, podcast or short-form audio instead of mixing test tones.</p>
     </div><aside class="intro-side"><span class="eyebrow">SOURCE / CONTROL / OUTPUT</span>
       <p>Source-owned media. Sample-frame coordinates. Native C/WASM rendering. No uploads while you edit.</p>
       <div class="engine-meta"><span id="sourceCounter">0 SOURCE FILES</span><span id="trackCounter">0 CLIPS</span></div>
@@ -33,7 +33,9 @@
       <select id="savedProjects" aria-label="Saved projects"><option value="">Saved projects</option></select>
     </div>
     <div class="session-actions">
-      <button type="button" id="loadDemo" class="quiet">Load example</button>
+      <button type="button" id="loadDemo" class="quiet">Load sourced editorial session</button>
+      <button type="button" id="recordMic" class="quiet">● Record voice</button>
+      <button type="button" id="stopMic" class="quiet" hidden>■ Stop recording</button>
       <label class="primary upload">+ Import audio<input id="audioFiles" type="file" multiple accept="audio/*,.wav,.mp3,.ogg,.m4a,.flac,.aiff" hidden></label>
       <button type="button" id="undo" class="quiet" aria-label="Undo last clip edit" disabled>↶ Undo</button>
       <button type="button" id="redo" class="quiet" aria-label="Redo last clip edit" disabled>↷ Redo</button>
@@ -50,7 +52,11 @@
     <div class="transport-mix">
       <label>MASTER<input id="master" aria-label="Master level" type="range" min="0" max="2" step=".01" value="1"></label>
       <output id="masterValue">100%</output>
-      <label class="toggle"><input id="normalize" type="checkbox"><span>Peak normalize</span></label>
+      <label class="toggle"><input id="normalize" type="checkbox"><span>Peak target −1 dBFS</span></label>
+      <label class="toggle"><input id="autoDuck" type="checkbox"><span>Voice ducks music</span></label>
+      <label>DUCK REDUCTION<input id="duckDepth" aria-label="Music reduction during voice" type="range" min="0" max="24" step="1" value="12"></label>
+      <output id="duckValue">12 dB</output>
+      <label class="toggle"><input id="voiceHP" type="checkbox" checked><span>Voice low-cut · 85 Hz</span></label>
       <label>ZOOM<input id="zoom" aria-label="Timeline zoom" type="range" min="38" max="180" step="1" value="72"></label>
       <span class="zoom-label">PX / SECOND</span>
     </div>
@@ -66,7 +72,7 @@
         <div class="ruler-scroll" id="rulerScroll"><div id="ruler" class="ruler" role="slider" tabindex="0" aria-label="Move playback cursor" aria-valuemin="0" aria-valuemax="180" aria-valuenow="0"><div id="rulerTicks"></div><div class="cursor" id="rulerCursor"></div></div></div>
       </div>
       <div id="lanes" class="lanes" aria-label="Audio tracks"></div>
-      <div class="arrangement-foot"><span id="timelineState">Load the source example or import audio.</span><span>Max 16 sources · 32 clips · 3 min output</span></div>
+      <div class="arrangement-foot"><span id="timelineState">Choose the sourced radio edit, record your voice or import audio.</span><span>Max 16 sources · 32 clips · 3 min output</span></div>
     </div>
     <aside class="inspector">
       <div class="area-head inspector-head"><div><div class="eyebrow">02 / CLIP DETAIL</div><h2>Shape the sound.</h2></div></div>
@@ -74,6 +80,7 @@
       <div id="inspectorControls" hidden>
         <div class="inspector-caption"><span class="swatch" id="clipSwatch"></span><div><strong id="clipName">Clip</strong><small id="clipSource">Source</small></div></div>
         <div class="field"><label for="clipLabel">Clip name</label><input id="clipLabel" maxlength="80"></div>
+        <div class="field"><label for="clipRole">Recording role</label><select id="clipRole"><option value="voice">Spoken voice</option><option value="music">Music bed</option><option value="ambience">Location ambience</option><option value="fx">Foley / sound effect</option><option value="other">Other audio</option></select></div>
         <div class="field-grid">
           <div class="field"><label for="clipAt">Place at (s)</label><input id="clipAt" type="number" step=".05" min="0" max="180"></div>
           <div class="field"><label for="clipStart">Trim source from (s)</label><input id="clipStart" type="number" step=".05" min="0"></div>
@@ -105,11 +112,11 @@
         <button type="button" class="secondary" id="downloadNotes">Show notes ↓</button>
         <button type="button" class="secondary" id="downloadHandoff">Typed session handoff ↓</button>
       </div>
-      <div class="source-note">Audio renders entirely in this browser with the source-derived native C/WASM summing kernel. Exported files are drafts until you review content and rights.</div>
+      <div class="source-note">Audio renders in your browser through the source-derived native C/WASM summing kernel. Spoken voice can reduce the music bed automatically; an 85 Hz high-pass removes low rumble, not speech noise by AI. Exported files require a rights and credits review.</div>
     </div>
     <aside class="publication-panel">
       <div class="eyebrow">04 / PODCAST DELIVERY</div><h2>One sound.<br><em>More ways out.</em></h2>
-      <p>Mark chapters, write release notes and prepare a file for your Podcast Plant pipeline. These steps make an output ready for review; they do not publish or send it.</p>
+      <p>Edit a real spoken-word or recorded source, balance it against a music bed, create chaptered highlights, and prepare audio for Podcast Plant. Source rights and release authority remain your decision.</p>
       <label>Chapter markers <span id="chapterCount">0</span></label>
       <div id="chapterList" class="chapter-list"></div>
       <label for="sessionNotes">Show notes &amp; production log</label>
@@ -122,7 +129,8 @@
         <option value="permission-pending">Permission pending</option>
       </select>
       <button type="button" id="preparePodcast" class="primary" disabled>Prepare Podcast Plant intake ↗</button>
-      <p id="deliveryStatus" class="minor">Render the mix to prepare a local file. Upload to GitHub only if you choose to, through your own signed-in account.</p>
+      <p id="deliveryStatus" class="minor">Render to prepare a local file. This demo includes real licensed recordings; review all credits before publishing or redistributing a mix.</p>
+      <details class="credits"><summary>Source recordings, credits &amp; licenses</summary><div id="sourceCredits">Load the editorial session to inspect source ownership and licences.</div><a href="media/CREDITS.md" target="_blank" rel="noopener noreferrer">Read complete source credits ↗</a></details>
       <a href="https://github.com/Nickgonzales76017/pages-podcast-plant/tree/main/input" target="_blank" rel="noopener noreferrer" class="pipeline-link">Open authorized Podcast Plant input ↗</a>
     </aside>
   </section>
