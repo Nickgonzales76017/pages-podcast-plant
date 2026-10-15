@@ -26,5 +26,8 @@ jobs:
           node --check site/studio/mix-model.mjs
           node --check site/studio/mix-worker.mjs
           node --check site/studio/studio.mjs
+          node --check site/studio/editorial-kit.mjs
+          node --check site/studio/audio-production.mjs
+          node --check site/studio/quick/quick.mjs
       - name: Run deterministic native mix, WAV and clip contracts
-        run: node --test tests/creator-studio.test.mjs
+        run: node --test tests/creator-studio.test.mjs tests/audio-production.test.mjs
