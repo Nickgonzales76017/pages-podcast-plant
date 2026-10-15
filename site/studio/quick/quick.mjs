@@ -57,13 +57,41 @@ const gainFromDb=d=>d<=-60?0:Math.pow(10,d/20);
 function setPreset(name){
  if(!presets[name]||!project)throw Error("Unknown production treatment.");
  const p=presets[name];
+ const arrangements={
+  interview:{voice:[2,0,11.5,.12,.35],music:[0,0,18,.75,1.3],
+    ambience:[1.8,0,16,1.2,1.2],fx:[13,0,6,.08,.4]},
+  documentary:{voice:[3,0,11.5,.2,.8],music:[1.7,1.2,18,.9,2],
+    ambience:[0,0,16,1.4,2],fx:[12,0,6,.15,.6]},
+  voice:{voice:[.2,0,11.5,.05,.6],music:[0,0,13,.5,2],
+    ambience:[0,0,12,.5,2],fx:[9,0,3,.15,.8]},
+  promo:{voice:[1.8,2.7,9.5,.08,.5],music:[0,0,12,.3,1],
+    ambience:[2,0,8,.3,.8],fx:[8.5,0,3,.06,.35]}
+ };
  for(const role of ["voice","music","ambience","fx"]){
-  const clip=clipByRole(role);if(clip)clip.gain=p[role];
+  const clip=clipByRole(role);if(!clip)continue;
+  clip.gain=p[role];clip.solo=false;clip.mute=false;
+  const [at,start,end,fadeIn,fadeOut]=arrangements[name][role];
+  const length=sources.get(clip.sourceId).pcm.length/(RATE*2);
+  clip.start=Math.min(start,Math.max(0,length-.05));
+  clip.end=Math.min(length,end);
+  if(clip.end-clip.start<.05){clip.start=0;clip.end=length;}
+  clip.at=Math.max(0,Math.min(at,MAX_SECONDS-(clip.end-clip.start)));
+  clip.fadeIn=Math.min(fadeIn,clip.end-clip.start);
+  clip.fadeOut=Math.min(fadeOut,clip.end-clip.start);
  }
+ project.chapters=name==="promo"?
+  [{at:0,title:"Musical hook"},{at:1.8,title:"Reading excerpt"},{at:8.5,title:"Editorial sting"}]:
+  name==="voice"?
+  [{at:0,title:"Narration begins"},{at:7,title:"Closing phrase"}]:
+  name==="documentary"?
+  [{at:0,title:"Location opens"},{at:3,title:"Narration"},{at:12,title:"Scene changes"}]:
+  [{at:0,title:"Music opens"},{at:2,title:"Narration"},{at:13,title:"Closing Foley"}];
+ project.title="After Love / "+p.label;
  project.ducking={enabled:true,depthDb:p.depth,thresholdDb:-37,attackMs:45,releaseMs:340};
  project.normalize=true;project.voiceHighpass=true;
- document.querySelectorAll(".preset").forEach(b=>b.classList.toggle("selected",b.dataset.preset===name));
- $("duck").checked=true;$("duckDepth").value=p.depth;$("duckValue").textContent=p.depth+" dB";
+ document.querySelectorAll(".preset").forEach(button=>button.classList.toggle("selected",button.dataset.preset===name));
+ $("duck").checked=true;$("duckDepth").value=p.depth;
+ $("duckValue").textContent=p.depth+" dB";
  $("highpass").checked=true;$("peakLimit").checked=true;
  changed();
 }
