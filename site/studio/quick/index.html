@@ -1,0 +1,57 @@
+<!doctype html><html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark">
+<meta name="description" content="Aurekai Quick Mix: make a real narrated intro, scene or promo from licensed voice, music and location audio, or add your own narration.">
+<title>Quick Mix · Aurekai Creator Systems</title><link rel="stylesheet" href="./quick.css">
+<script type="module" src="./quick.mjs"></script>
+</head>
+<body>
+<a href="#mixer" class="skip">Skip to mixer</a>
+<header class="top">
+<a href="../../" class="brand"><span class="mark">A·</span><span>AUREKAI<small>CREATOR SYSTEMS / QUICK MIX</small></span></a>
+<nav aria-label="Go to other creators"><a href="../">Full Creator Studio ↗</a><a href="../../">Podcast Plant</a><a href="https://nickgonzales76017.github.io/bonfyre/#experiences">All work</a></nav>
+<span class="engine" id="engineStatus">Loading licensed audio…</span>
+</header>
+<main id="mixer">
+<section class="hero">
+<div class="eyebrow">REAL RECORDINGS / INTENTIONAL EDITS</div>
+<h1>Make the voice<br><em>feel like a story.</em></h1>
+<p>Not oscillator demos. Work with a public-domain human narration, CC0 music, room ambience and credited Foley—or replace the narration with your own recording. Hear the production decision.</p>
+<div class="hero-right"><span>QUICK MIX</span><strong>01 / 03</strong><small>SOURCE → BALANCE → CUT</small></div>
+</section>
+<section class="presets" aria-label="Production scenes">
+<div class="section-bar"><span>01 / CHOOSE A CUT</span><span>Four production treatments of the same real sources</span></div>
+<div class="preset-list">
+<button data-preset="interview" class="preset selected"><span>01</span><strong>Spoken opener</strong><small>Clear narrator · quiet music · 15 dB duck</small></button>
+<button data-preset="documentary" class="preset"><span>02</span><strong>Documentary scene</strong><small>Field ambience · natural cuts · gentle music</small></button>
+<button data-preset="voice" class="preset"><span>03</span><strong>Voice forward</strong><small>Voice detail · low-cut · restrained score</small></button>
+<button data-preset="promo" class="preset"><span>04</span><strong>Short-form teaser</strong><small>Musical momentum · punchy reveal</small></button>
+</div>
+</section>
+<div class="workspace">
+<section class="mix-panel">
+<div class="section-bar"><span>02 / MIX FOUR REAL SOURCES</span><span>Changes render with native C/WASM</span></div>
+<div id="sourceRows" class="source-rows"></div>
+<div class="mix-tools">
+<div><label class="toggle"><input id="duck" type="checkbox" checked> Duck music when the narration speaks</label><label class="range-label">Ducking depth<input id="duckDepth" type="range" min="0" max="24" step="1" value="15"><output id="duckValue">15 dB</output></label></div>
+<div><label class="toggle"><input id="highpass" type="checkbox" checked> Remove low vocal rumble (85 Hz high-pass)</label><label class="toggle"><input id="peakLimit" type="checkbox" checked> Sample-peak normalize to −1 dBFS</label></div>
+</div>
+<div class="file-bar"><label class="file-button">Replace narration with your own audio<input id="voiceFile" type="file" accept="audio/*,.mp3,.wav,.ogg,.m4a,.webm" hidden></label><span>File stays on this device. Up to 35 MB / 3 minutes.</span></div>
+</section>
+<aside class="output-panel">
+<div class="section-bar"><span>03 / HEAR &amp; DELIVER</span><span id="duration">00:00</span></div>
+<div class="playbar"><button id="play" type="button" disabled aria-label="Play your edit">▶</button><button id="stop" type="button" disabled aria-label="Stop playback">■</button>
+<strong id="clock">00:00.00</strong><button id="render" type="button" class="btn primary">Render edit ↗</button></div>
+<canvas id="wave" height="164" aria-label="Rendered stereo audio waveform"></canvas>
+<div class="meters"><div><span>PEAK</span><strong id="peak">—</strong></div><div><span>RMS</span><strong id="rms">—</strong></div><div><span>OVER 0 dB</span><strong id="clipped">—</strong></div></div>
+<p id="status" role="status" class="status">Preparing real source recordings.</p>
+<div class="cut"><label>Export from (s)<input id="from" type="number" min="0" step=".1" value="0"></label><label>To (s) · 0 = full mix<input id="to" type="number" min="0" step=".1" value="0"></label></div>
+<div class="actions"><button id="download" type="button" class="btn primary" disabled>Export edited WAV</button><button id="notes" type="button" class="btn secondary">Export notes + credits</button></div>
+<button id="continue" type="button" class="continue" disabled>Continue this exact edit in full Creator Studio ↗</button>
+<p class="fine">Edits and audio stay browser-local. No automatic upload, publishing, payment or rights clearance.</p>
+<details class="credits"><summary>Actual recordings &amp; reuse rights</summary><div id="credits"></div><a href="../media/CREDITS.md" rel="noopener noreferrer" target="_blank">Full credits and licensing ↗</a></details>
+</aside>
+</div>
+</main>
+<footer><span>AUREKAI / SOURCE-AWARE AUDIO</span><span>Real voice · licensed music · local edit · native mix</span><a href="../">Open full workbench ↗</a></footer>
+<div id="toast" role="status" aria-live="polite" class="toast"></div>
+</body></html>
