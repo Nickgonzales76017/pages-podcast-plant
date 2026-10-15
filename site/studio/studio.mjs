@@ -268,7 +268,7 @@ function renderTimeline(){
    if(e.button!==0)return;
    const edge=e.target.dataset.edge||"move",startX=e.clientX,before=structuredClone(c);
    selected=c.id;remember();clip.setPointerCapture(e.pointerId);
-   clip.addEventListener("pointermove",function move(ev){
+   clip.onpointermove=function move(ev){
      if(!clip.hasPointerCapture(ev.pointerId))return;
      let delta=(ev.clientX-startX)/zoom;if($("snap").checked)delta=Math.round(delta*4)/4;
      Object.assign(c,before);
@@ -280,8 +280,9 @@ function renderTimeline(){
      if(edge==="right")c.end=Math.min(sourceOf(c).pcm.length/(RATE*2),Math.max(before.start+.04,before.end+delta));
      if(c.at+c.end-c.start>MAX_SECONDS)c.end=MAX_SECONDS-c.at+c.start;
      clip.style.left=Math.round(c.at*zoom)+"px";clip.style.width=Math.max(5,Math.round((c.end-c.start)*zoom))+"px";
-   });
+   };
    clip.addEventListener("pointerup",()=>{
+    clip.onpointermove=null;
     if(clip.hasPointerCapture(e.pointerId))clip.releasePointerCapture(e.pointerId);
     markDirty();renderUI();
    },{once:true});
