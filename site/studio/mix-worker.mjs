@@ -69,6 +69,6 @@ self.addEventListener("message",async ({data})=>{
   }
   const rms=Math.sqrt(energy/output.length)*(project.normalize?normalization:1);
   const array=output.buffer;
-  send("result",{id:data.id,frames,peak,rms,overs,prePeak,normalization,buffer:array},[array]);
+  postMessage({type:"result",id:data.id,frames,peak,rms,overs,prePeak,normalization,buffer:array},[array]);
  }catch(error){send("error",{id:data?.id??-1,message:error.message||String(error)});}
 });
