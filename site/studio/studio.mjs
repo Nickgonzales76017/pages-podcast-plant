@@ -263,6 +263,32 @@ function paintClip(canvas,clip,samples){
  }
  p.stroke();
 }
+function drawClipVector(svg,clip,pcm){
+ // Real source-sample peaks as DOM geometry, not a decorative fake waveform.
+ const from=Math.max(0,Math.round(clip.start*RATE));
+ const to=Math.min(pcm.length/2,Math.round(clip.end*RATE));
+ if(to<=from)return;
+ const bins=180;
+ svg.setAttribute("viewBox","0 0 720 100");
+ svg.setAttribute("preserveAspectRatio","none");
+ const path=document.createElementNS("http://www.w3.org/2000/svg","path");
+ let d="";
+ for(let i=0;i<bins;i++){
+  const a=from+Math.floor((to-from)*i/bins);
+  const b=Math.min(to,Math.max(a+1,from+Math.ceil((to-from)*(i+1)/bins)));
+  const stride=Math.max(1,Math.floor((b-a)/96));
+  let peak=0;
+  for(let f=a;f<b;f+=stride)peak=Math.max(peak,Math.abs(pcm[f*2]),Math.abs(pcm[f*2+1]));
+  const x=i*4+2,y=Math.max(2,Math.min(47,peak*46));
+  d+="M"+x+" "+(50-y).toFixed(1)+"L"+x+" "+(50+y).toFixed(1);
+ }
+ path.setAttribute("d",d);
+ path.setAttribute("stroke","#f0f8ed");
+ path.setAttribute("stroke-width","2.3");
+ path.setAttribute("fill","none");
+ svg.replaceChildren(path);
+ svg.dataset.waveformBins=String(bins);
+}
 function setCursor(){
  const x=playhead*zoom;
  $("rulerCursor").style.left=x+"px";
@@ -300,7 +326,7 @@ function renderTimeline(){
   clip.style.background=c.tint;clip.style.borderColor=c.tint;
   clip.style.left=Math.round(c.at*zoom)+"px";clip.style.width=Math.max(5,Math.round((c.end-c.start)*zoom))+"px";
   clip.setAttribute("role","button");clip.tabIndex=0;clip.setAttribute("aria-label",c.label+", at "+fmt(c.at)+"; press Enter to edit");
-  clip.innerHTML='<span class="clip-title"></span><canvas height="53"></canvas><span class="clip-handle left" data-edge="left"></span><span class="clip-handle right" data-edge="right"></span>';
+  clip.innerHTML='<span class="clip-title"></span><canvas height="53"></canvas><svg class="wave-profile" aria-hidden="true"></svg><span class="clip-handle left" data-edge="left"></span><span class="clip-handle right" data-edge="right"></span>';
   clip.querySelector(".clip-title").textContent=c.label;
   clip.addEventListener("click",()=>{selected=c.id;displayClip();renderTimeline();});
   clip.addEventListener("keydown",e=>{if(e.key==="Enter"){selected=c.id;displayClip();renderTimeline();$("clipAt").focus();}});
@@ -329,6 +355,7 @@ function renderTimeline(){
   });
   inner.append(clip);laneScroller.append(inner);lane.append(label,laneScroller);root.append(lane);
   paintClip(clip.querySelector("canvas"),c,sourceOf(c).pcm);
+  drawClipVector(clip.querySelector(".wave-profile"),c,sourceOf(c).pcm);
  }
  for(const lane of root.querySelectorAll(".lane-timeline"))lane.addEventListener("scroll",()=>{
   const target=lane.scrollLeft;for(const other of root.querySelectorAll(".lane-timeline"))if(other!==lane)other.scrollLeft=target;
