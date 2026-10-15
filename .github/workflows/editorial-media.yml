@@ -1,0 +1,54 @@
+name: Produce licensed editorial demo audio
+on:
+  push:
+    branches: [main]
+    paths:
+      - scripts/build-editorial-kit.sh
+      - .github/workflows/editorial-media.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: editorial-source-excerpt-release
+  cancel-in-progress: false
+jobs:
+  media:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Install audio processing tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+      - name: Build short permitted real-audio excerpts
+        run: bash scripts/build-editorial-kit.sh
+      - name: Validate media codecs, duration and hashes
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd site/studio/media
+          sha256sum -c SHA256SUMS
+          for f in voice-reading.mp3 music-bed.mp3 location-ambience.mp3 keyboard-foley.mp3; do
+            ffprobe -v error -select_streams a:0 -show_entries stream=codec_name,sample_rate,channels               -of default=noprint_wrappers=1 "$f" | tee /tmp/audio-metadata.txt
+            grep -q 'codec_name=mp3' /tmp/audio-metadata.txt
+            grep -q 'sample_rate=48000' /tmp/audio-metadata.txt
+            grep -q 'channels=2' /tmp/audio-metadata.txt
+          done
+      - name: Publish only the pinned excerpt files
+        shell: bash
+        env:
+          GH_REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git config user.name 'github-actions[bot]'
+          git add -f site/studio/media/voice-reading.mp3 site/studio/media/music-bed.mp3             site/studio/media/location-ambience.mp3 site/studio/media/keyboard-foley.mp3             site/studio/media/SHA256SUMS
+          if git diff --cached --quiet; then
+            echo 'Pinned media already matches current approved source'; exit 0
+          fi
+          git commit -m 'assets(creator): publish licensed spoken-word editorial session'
+          git pull --rebase origin main
+          git push origin HEAD:main
