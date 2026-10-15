@@ -71,7 +71,7 @@ export async function loadEditorialSession(audio,report=()=>{}){
   const sourceId="real-"+item.id;
   sources.set(sourceId,{name:item.label,pcm,peaks:sourcePeaks(pcm),
     kind:"licensed recording",rights:item.license,origin:item.origin,
-    originURL:item.url,requiresAttribution:item.requiredCredit,role:item.role});
+    originURL:item.url,requiresAttribution:item.requiredCredit,role:item.role,sha256:digest});
   const seconds=pcm.length/(RATE*2);
   project.clips.push({
     id:"clip-"+item.id,sourceId,label:item.label,role:item.role,
