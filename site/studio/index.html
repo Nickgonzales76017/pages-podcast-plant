@@ -50,6 +50,15 @@
       <div class="clock"><strong id="clock">00:00.00</strong><small id="totalTime">/ 00:00.00</small></div>
     </div>
     <div class="transport-mix">
+      <label>PRODUCTION TREATMENT
+        <select id="productionTreatment" aria-label="Apply real-source editorial arrangement">
+          <option value="custom">Current custom arrangement</option>
+          <option value="interview">Spoken opener</option>
+          <option value="documentary">Documentary scene</option>
+          <option value="voice">Voice forward</option>
+          <option value="promo">Short-form teaser</option>
+        </select>
+      </label>
       <label>MASTER<input id="master" aria-label="Master level" type="range" min="0" max="2" step=".01" value="1"></label>
       <output id="masterValue">100%</output>
       <label class="toggle"><input id="normalize" type="checkbox"><span>Peak target −1 dBFS</span></label>
