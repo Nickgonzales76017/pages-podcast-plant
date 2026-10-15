@@ -1,7 +1,7 @@
 /* A compact, real-content production surface over the same native C/Wasm
  * mixer as the full Creator Studio. No uploads or auto-publication.
  */
-import {RATE,fmt,wavEncode,showNotes,selectedFrames,validateProject} from "../mix-model.mjs";
+import {RATE,MAX_SOURCE_FLOATS,fmt,wavEncode,showNotes,selectedFrames,validateProject} from "../mix-model.mjs";
 import {loadEditorialSession} from "../editorial-kit.mjs";
 const $=id=>document.getElementById(id);
 let project=null,sources=new Map(),worker=null,context=null,playing=null,rendered=null,playStarted=0;
@@ -126,8 +126,8 @@ async function render(){
   const result=await send("render",{project:structuredClone(project)});
   if(current!==revision)throw Error("Your mix changed during the render. Render again.");
   rendered={pcm:new Float32Array(result.buffer),frames:result.frames,stats:result};
-  $("peak").textContent=(result.peak>0?20*Math.log10(result.peak).toFixed(1):"-∞")+" dBFS";
-  $("rms").textContent=(result.rms>0?20*Math.log10(result.rms).toFixed(1):"-∞")+" dBFS";
+  $("peak").textContent=(result.peak>0?(20*Math.log10(result.peak)).toFixed(1):"-∞")+" dBFS";
+  $("rms").textContent=(result.rms>0?(20*Math.log10(result.rms)).toFixed(1):"-∞")+" dBFS";
   $("clipped").textContent=String(result.overs);
   $("play").disabled=false;$("download").disabled=false;$("continue").disabled=false;
   $("status").textContent="Render ready · "+fmt(result.frames/RATE)+" · native C/Wasm · "+result.overs+" over-limit samples.";
@@ -202,9 +202,8 @@ async function replaceNarration(file){
  source.name="Your recording: "+file.name;source.pcm=pcm;source.kind="local narration";source.rights="Rights not established";
  source.origin="Imported by this visitor";source.originURL="";source.requiresAttribution=false;
  const clip=clipByRole("voice");clip.end=audio.length/RATE;
- const max=clip.at+clip.end;
- if(max>MAX_SECONDS)clip.at=0;
- if(max>MAX_SECONDS)throw Error("Narration cannot fit this session.");
+ if(clip.at+clip.end>MAX_SECONDS)clip.at=0;
+ if(clip.at+clip.end>MAX_SECONDS)throw Error("Narration cannot fit this session.");
  if(clip.fadeOut>clip.end)clip.fadeOut=Math.min(.3,clip.end);
  await send("reset",{});
  for(const [id,s] of sources)await send("source",{sourceId:id,name:s.name,pcm:s.pcm});
