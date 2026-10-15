@@ -178,6 +178,30 @@ async function importAudio(files){
 }
 const selectedClip=()=>project.clips.find(c=>c.id===selected);
 const sourceOf=c=>sources.get(c.sourceId);
+function renderCredits(){
+ const holder=$("sourceCredits");holder.replaceChildren();
+ if(!sources.size){holder.textContent="No source recordings yet.";return;}
+ const used=new Set(project.clips.map(c=>c.sourceId));
+ for(const [id,source] of sources){
+  if(!used.has(id))continue;
+  const row=document.createElement("p");
+  const label=document.createElement("strong");label.textContent=source.name||id;
+  const desc=document.createElement("span");
+  desc.textContent=(source.origin||"User-provided recording")+" · "+(source.rights||"Rights unreviewed");
+  row.append(label,desc);
+  if(source.requiresAttribution){
+   const required=document.createElement("span");required.className="required";
+   required.textContent=" · Attribution required on redistributed mixes.";
+   row.append(required);
+  }
+  if(source.originURL&&/^https:\/\//.test(source.originURL)){
+   const a=document.createElement("a");a.href=source.originURL;
+   a.rel="noopener noreferrer";a.target="_blank";a.textContent=" Original recording ↗";
+   row.append(a);
+  }
+  holder.append(row);
+ }
+}
 function refreshMetrics(){
  $("sourceCounter").textContent=sources.size+" SOURCE FILE"+(sources.size===1?"":"S");
  $("trackCounter").textContent=project.clips.length+" CLIP"+(project.clips.length===1?"":"S");
@@ -324,7 +348,7 @@ function drawMaster(){
  context.stroke();
 }
 function renderUI(){
- refreshMetrics();displayClip();chapterUI();renderTimeline();drawMaster();
+ refreshMetrics();displayClip();chapterUI();renderTimeline();drawMaster();renderCredits();
  $("zoom").value=zoom;
 }
 function stop(){
@@ -403,6 +427,17 @@ $("play").addEventListener("click",()=>safe(play));
 $("stop").addEventListener("click",stop);
 $("master").addEventListener("input",e=>{const n=Number(e.target.value);if(n>=0&&n<=2){project.master=n;markDirty();$("masterValue").textContent=Math.round(n*100)+"%";}});
 $("normalize").addEventListener("change",e=>{project.normalize=e.target.checked;markDirty();});
+$("autoDuck").addEventListener("change",e=>{
+ project.ducking??={enabled:false,depthDb:12,thresholdDb:-37,attackMs:45,releaseMs:340};
+ project.ducking.enabled=e.target.checked;markDirty();
+});
+$("duckDepth").addEventListener("input",e=>{
+ project.ducking??={enabled:false,depthDb:12,thresholdDb:-37,attackMs:45,releaseMs:340};
+ const n=Number(e.target.value);
+ if(n>=0&&n<=24)project.ducking.depthDb=n;
+ $("duckValue").textContent=n+" dB";markDirty();
+});
+$("voiceHP").addEventListener("change",e=>{project.voiceHighpass=e.target.checked;markDirty();});
 $("zoom").addEventListener("input",e=>{zoom=Number(e.target.value);renderTimeline();});
 $("ruler").addEventListener("click",e=>{
  const box=$("ruler").getBoundingClientRect();
@@ -425,6 +460,11 @@ for(const [id,key] of Object.entries(fields))$(id).addEventListener("change",e=>
  const clip=selectedClip();if(!clip)return;const n=key==="label"?e.target.value.slice(0,80):Number(e.target.value);
  remember();validMutation(()=>{clip[key]=n;});
  renderUI();
+}));
+$("clipRole").addEventListener("change",e=>safe(()=>{
+ const clip=selectedClip();if(!clip)return;
+ remember();clip.role=e.target.value;validateProject(project,sources);
+ markDirty();renderUI();
 }));
 for(const [id,key] of [["clipMute","mute"],["clipSolo","solo"]])$(id).addEventListener("change",e=>safe(()=>{
  const clip=selectedClip();if(!clip)return;remember();clip[key]=e.target.checked;markDirty();renderUI();
@@ -479,10 +519,12 @@ Object.defineProperty(window,"aurekaiCreatorWitness",{get:()=>publicSnapshot});
 (async()=>{
  try{
   configureWorker();db=await openDB().catch(()=>null);
-  await refreshSaves();await initExample();
-  $("kernelStatus").textContent="Native C/WASM · verified";
+  await refreshSaves();await initEditorial();
+  $("kernelStatus").textContent="Native C/WASM · sourced audio verified";
  }catch(error){
-  $("kernelStatus").textContent="Native audio unavailable";
-  msg(error.message);toast(error.message,true);
+  $("kernelStatus").textContent="Local editor · source kit unavailable";
+  msg("The licensed editorial source cannot be loaded: "+error.message+" Import your own recording.");
+  toast(error.message,true);
+  renderUI();
  }
 })();
