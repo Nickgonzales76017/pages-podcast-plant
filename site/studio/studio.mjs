@@ -84,7 +84,7 @@ async function refreshSaves(){
 async function saveProject(){
  if(!db)throw Error("Local project storage is unavailable. You can still export audio and notes.");
  validateProject(project,sources);
- const data={project:snapshot(),sources:[...sources].map(([id,s])=>[id,{name:s.name,kind:s.kind,rights:s.rights,pcm:s.pcm,origin:s.origin,originURL:s.originURL,requiresAttribution:s.requiresAttribution,role:s.role}])};
+ const data={project:snapshot(),sources:[...sources].map(([id,s])=>[id,{name:s.name,kind:s.kind,rights:s.rights,pcm:s.pcm,origin:s.origin,originURL:s.originURL,requiresAttribution:s.requiresAttribution,role:s.role,sha256:s.sha256}])};
  currentRevision=await storeProject(project.id,currentRevision,data);
  dirty=false;$("save").textContent="Saved ✓";
  await refreshSaves();$("savedProjects").value=project.id;
@@ -189,6 +189,12 @@ function renderCredits(){
   const desc=document.createElement("span");
   desc.textContent=(source.origin||"User-provided recording")+" · "+(source.rights||"Rights unreviewed");
   row.append(label,desc);
+  if(typeof source.sha256==="string"&&/^[a-f0-9]{64}$/.test(source.sha256)){
+   const provenance=document.createElement("code");provenance.className="source-hash";
+   provenance.textContent=" · Audio SHA-256 "+source.sha256;
+   provenance.title="Full digest verified before this source was decoded.";
+   row.append(provenance);
+  }
   if(source.requiresAttribution){
    const required=document.createElement("span");required.className="required";
    required.textContent=" · Attribution required on redistributed mixes.";
