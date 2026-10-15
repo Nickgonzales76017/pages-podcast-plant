@@ -19,12 +19,20 @@ export function validateProject(p,sources){
  }
  if(sources.size>MAX_SOURCES||total>MAX_SOURCE_FLOATS)
    throw Error("Source capacity exceeded; use shorter or fewer source clips.");
+ if(p.ducking && (typeof p.ducking.enabled!=="boolean"||
+   !finite(p.ducking.depthDb,0,24)||!finite(p.ducking.thresholdDb,-60,0)||
+   !finite(p.ducking.attackMs,5,500)||!finite(p.ducking.releaseMs,20,3000)))
+   throw Error("Invalid spoken-word ducking controls.");
+ if(typeof p.credits!=="undefined"&&(typeof p.credits!=="string"||p.credits.length>5000))
+   throw Error("Source credits are invalid.");
  const ids=new Set();
  for(const c of p.clips){
    const s=sources.get(c.sourceId);
    if(!/^[a-z0-9-]{1,70}$/i.test(c.id)||ids.has(c.id)||!s)
       throw Error("Clip source identity is missing.");
    ids.add(c.id);
+   if(c.role&&!["voice","music","ambience","fx","other"].includes(c.role))
+      throw Error("Invalid audio source role.");
    if(!finite(c.start,0,s.pcm.length/(RATE*CHANNELS))||
       !finite(c.end,c.start,s.pcm.length/(RATE*CHANNELS))||c.end-c.start<1/RATE||
       !finite(c.at,0,MAX_SECONDS)||c.at+c.end-c.start>MAX_SECONDS+1e-6||
@@ -79,7 +87,8 @@ export function sourcePeaks(samples,columns=240){
 }
 export const emptyProject=()=>({
  sampleRate:RATE,id:"local-session",title:"Untitled session",master:1,
- normalize:false,notes:"",rights:"unreviewed",clips:[],chapters:[],
+ normalize:false,notes:"",rights:"unreviewed",credits:"",clips:[],chapters:[],
+ ducking:{enabled:false,depthDb:12,thresholdDb:-37,attackMs:45,releaseMs:340},
  selection:{from:0,to:0}
 });
 export function exampleSession(){
@@ -146,7 +155,9 @@ export function showNotes(p){
   "## Production notes",p.notes||"Notes not provided.","",
   "## Rights and release review",
   "Rights state: "+p.rights,
-  "This document has not been published or distributed; source rights require review."
+  "This document has not been published or distributed; source rights require review.",
+  p.credits?"":"",p.credits?"## Credits and licence information":"",
+  p.credits||""
  ].join("\n")+"\n";
 }
 const quoted=s=>'"'+String(s??"").replace(/[\t\r\n"]/g," ").slice(0,180)+'"';
@@ -156,6 +167,8 @@ export function handoffYaff(p){
  return ["program creator-session-proposal","title "+quoted(p.title),
   "sample_rate "+RATE,"channels 2","clips "+p.clips.length,"master "+p.master,
   "rights "+p.rights,
+  "auto_duck "+(p.ducking?.enabled?"enabled":"disabled"),
+  "duck_depth_db "+(p.ducking?.depthDb??0),
   ...p.clips.map(c=>["clip",c.id,c.sourceId,clipFrame(c).at,
    clipFrame(c).from,clipFrame(c).to,c.gain,c.pan,c.fadeIn,c.fadeOut,
    c.mute?"mute":"active",c.solo?"solo":"standard"].join(" ")),
