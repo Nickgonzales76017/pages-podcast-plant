@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="description" content="Aurekai Creator Studio: import local audio, arrange and trim clips, mix through a native C WASM kernel and prepare podcast cuts.">
+<link rel="canonical" href="https://nickgonzales76017.github.io/pages-podcast-plant/studio/">
+<link rel="stylesheet" href="./studio.css">
+<title>Creator Studio · Aurekai</title>
+<script type="module" src="./studio.mjs"></script>
+</head>
+<body>
+<a class="skip" href="#arrangement">Skip to timeline</a>
+<header class="topbar">
+  <a class="identity" href="../" aria-label="Podcast Plant home"><span class="sigil">A<small>·</small></span><span>AUREKAI <small>CREATOR SYSTEMS / PODCAST PLANT</small></span></a>
+  <nav aria-label="Product links"><a href="../">Podcast Plant</a><a href="https://aurekai-work-samples.pages.dev/audio/">Original native mixer</a><a href="https://nickgonzales76017.github.io/bonfyre/#experiences">All work ↗</a></nav>
+  <div class="engine-status"><span class="status-dot"></span><span id="kernelStatus">Loading native engine…</span></div>
+</header>
+<main>
+  <section class="intro">
+    <div class="eyebrow">CREATOR / NATIVE MULTITRACK WORKSTATION</div>
+    <div class="intro-grid"><div><h1>Make the <em>whole piece.</em></h1>
+      <p>Bring your own recording, place it against other sounds, carve out a scene, hear the edit and take a finished cut into your publishing flow.</p>
+    </div><aside class="intro-side"><span class="eyebrow">SOURCE / CONTROL / OUTPUT</span>
+      <p>Source-owned media. Sample-frame coordinates. Native C/WASM rendering. No uploads while you edit.</p>
+      <div class="engine-meta"><span id="sourceCounter">0 SOURCE FILES</span><span id="trackCounter">0 CLIPS</span></div>
+    </aside></div>
+  </section>
+  <section class="session-bar" aria-label="Session management">
+    <div class="session-left">
+      <label class="label-inline">SESSION<input id="sessionTitle" aria-label="Session title" value="Untitled session" maxlength="100"></label>
+      <select id="savedProjects" aria-label="Saved projects"><option value="">Saved projects</option></select>
+    </div>
+    <div class="session-actions">
+      <button type="button" id="loadDemo" class="quiet">Load example</button>
+      <label class="primary upload">+ Import audio<input id="audioFiles" type="file" multiple accept="audio/*,.wav,.mp3,.ogg,.m4a,.flac,.aiff" hidden></label>
+      <button type="button" id="undo" class="quiet" aria-label="Undo last clip edit" disabled>↶ Undo</button>
+      <button type="button" id="redo" class="quiet" aria-label="Redo last clip edit" disabled>↷ Redo</button>
+      <button type="button" id="save" class="secondary">Save session</button>
+    </div>
+  </section>
+  <section class="transport" aria-label="Transport and mastering">
+    <div class="transport-controls">
+      <button type="button" id="play" class="play" aria-label="Play current render" disabled>▶</button>
+      <button type="button" id="stop" class="stop" aria-label="Stop playback" disabled>■</button>
+      <button type="button" id="render" class="primary">Render arrangement ↗</button>
+      <div class="clock"><strong id="clock">00:00.00</strong><small id="totalTime">/ 00:00.00</small></div>
+    </div>
+    <div class="transport-mix">
+      <label>MASTER<input id="master" aria-label="Master level" type="range" min="0" max="2" step=".01" value="1"></label>
+      <output id="masterValue">100%</output>
+      <label class="toggle"><input id="normalize" type="checkbox"><span>Peak normalize</span></label>
+      <label>ZOOM<input id="zoom" aria-label="Timeline zoom" type="range" min="38" max="180" step="1" value="72"></label>
+      <span class="zoom-label">PX / SECOND</span>
+    </div>
+  </section>
+  <section class="work-grid">
+    <div class="arrangement" id="arrangement">
+      <div class="area-head"><div><div class="eyebrow">01 / ARRANGEMENT</div><h2>Timeline</h2></div>
+      <div class="area-head-actions"><label><input id="snap" type="checkbox" checked> Snap to quarter-second</label>
+        <button type="button" id="addChapter" class="tiny">+ Chapter at playhead</button>
+      </div></div>
+      <div class="ruler-outer">
+        <div class="track-label-head">TRACKS <small>Drag clips to reposition</small></div>
+        <div class="ruler-scroll" id="rulerScroll"><div id="ruler" class="ruler" role="slider" tabindex="0" aria-label="Move playback cursor" aria-valuemin="0" aria-valuemax="180" aria-valuenow="0"><div id="rulerTicks"></div><div class="cursor" id="rulerCursor"></div></div></div>
+      </div>
+      <div id="lanes" class="lanes" aria-label="Audio tracks"></div>
+      <div class="arrangement-foot"><span id="timelineState">Load the source example or import audio.</span><span>Max 16 sources · 32 clips · 3 min output</span></div>
+    </div>
+    <aside class="inspector">
+      <div class="area-head inspector-head"><div><div class="eyebrow">02 / CLIP DETAIL</div><h2>Shape the sound.</h2></div></div>
+      <div id="inspectorEmpty" class="empty">Choose a clip from the timeline to edit its position, source trim, gain and fades. Your original recording stays untouched.</div>
+      <div id="inspectorControls" hidden>
+        <div class="inspector-caption"><span class="swatch" id="clipSwatch"></span><div><strong id="clipName">Clip</strong><small id="clipSource">Source</small></div></div>
+        <div class="field"><label for="clipLabel">Clip name</label><input id="clipLabel" maxlength="80"></div>
+        <div class="field-grid">
+          <div class="field"><label for="clipAt">Place at (s)</label><input id="clipAt" type="number" step=".05" min="0" max="180"></div>
+          <div class="field"><label for="clipStart">Trim source from (s)</label><input id="clipStart" type="number" step=".05" min="0"></div>
+          <div class="field"><label for="clipEnd">Trim source to (s)</label><input id="clipEnd" type="number" step=".05" min=".01"></div>
+          <div class="field"><label for="clipGain">Gain</label><input id="clipGain" type="number" min="0" max="2" step=".05"></div>
+          <div class="field"><label for="clipPan">Pan (-1 / +1)</label><input id="clipPan" type="number" min="-1" max="1" step=".05"></div>
+          <div class="field"><label for="clipFadeIn">Fade in (s)</label><input id="clipFadeIn" type="number" min="0" step=".05"></div>
+          <div class="field"><label for="clipFadeOut">Fade out (s)</label><input id="clipFadeOut" type="number" min="0" step=".05"></div>
+        </div>
+        <div class="control-pair"><label><input id="clipMute" type="checkbox"> Mute</label><label><input id="clipSolo" type="checkbox"> Solo</label></div>
+        <div class="clip-actions"><button class="tiny" id="duplicate" type="button">Duplicate</button><button class="tiny" id="split" type="button">Split at cursor</button><button class="danger" id="remove" type="button">Remove clip</button></div>
+      </div>
+      <div class="inspector-hint">Adjustments are nondestructive and reversible. Rendering updates the playable mix; exporting does not upload media.</div>
+    </aside>
+  </section>
+  <section class="finish-grid">
+    <div class="finish-panel">
+      <div class="area-head"><div><div class="eyebrow">03 / MONITOR & EXPORT</div><h2>Hear the consequence.</h2></div><div class="meter" id="meter"><span id="peak">PEAK —</span><span id="rms">RMS —</span><span id="overs">CLIPS —</span></div></div>
+      <canvas id="masterWave" height="174" aria-label="Rendered stereo waveform"></canvas>
+      <div class="render-status"><span id="renderStatus" role="status">Arrange sources, then render.</span><div class="progress"><span id="progressFill"></span></div></div>
+      <div class="region-edit">
+        <div class="field"><label>Export range from (s)<input id="rangeFrom" type="number" min="0" step=".1" value="0"></label></div>
+        <div class="field"><label>To (s) · zero means full mix<input id="rangeTo" type="number" min="0" step=".1" value="0"></label></div>
+        <span>Leave To at zero for the entire arrangement.</span>
+      </div>
+      <div class="export-actions">
+        <button type="button" class="primary" id="wav16" disabled>Download WAV · 16-bit</button>
+        <button type="button" class="secondary" id="wav32" disabled>WAV · float 32</button>
+        <button type="button" class="secondary" id="downloadNotes">Show notes ↓</button>
+        <button type="button" class="secondary" id="downloadHandoff">Typed session handoff ↓</button>
+      </div>
+      <div class="source-note">Audio renders entirely in this browser with the source-derived native C/WASM summing kernel. Exported files are drafts until you review content and rights.</div>
+    </div>
+    <aside class="publication-panel">
+      <div class="eyebrow">04 / PODCAST DELIVERY</div><h2>One sound.<br><em>More ways out.</em></h2>
+      <p>Mark chapters, write release notes and prepare a file for your Podcast Plant pipeline. These steps make an output ready for review; they do not publish or send it.</p>
+      <label>Chapter markers <span id="chapterCount">0</span></label>
+      <div id="chapterList" class="chapter-list"></div>
+      <label for="sessionNotes">Show notes &amp; production log</label>
+      <textarea id="sessionNotes" rows="5" maxlength="5000" placeholder="What changed, where the highlights begin and why this version is ready for review…"></textarea>
+      <label for="rights">Rights / review status</label>
+      <select id="rights">
+        <option value="unreviewed">Not reviewed</option>
+        <option value="self-owned">I created and own this source material</option>
+        <option value="licensed">I have reviewed the reuse permission</option>
+        <option value="permission-pending">Permission pending</option>
+      </select>
+      <button type="button" id="preparePodcast" class="primary" disabled>Prepare Podcast Plant intake ↗</button>
+      <p id="deliveryStatus" class="minor">Render the mix to prepare a local file. Upload to GitHub only if you choose to, through your own signed-in account.</p>
+      <a href="https://github.com/Nickgonzales76017/pages-podcast-plant/tree/main/input" target="_blank" rel="noopener noreferrer" class="pipeline-link">Open authorized Podcast Plant input ↗</a>
+    </aside>
+  </section>
+</main>
+<footer><span>AUREKAI / CREATOR SYSTEMS</span><span>Source files remain local · No automatic distribution · Original native mixer remains available</span><a href="https://aurekai-work-samples.pages.dev/audio/">See original demo ↗</a></footer>
+<div id="notice" class="notice" role="status" aria-live="polite"></div>
+</body>
+</html>
