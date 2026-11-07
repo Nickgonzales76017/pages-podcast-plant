@@ -80,19 +80,29 @@
     @media (max-width: 768px) { .app { grid-template-columns: 1fr; } .sidebar { border-right: none; border-bottom: 1px solid var(--border); } }
     
 
-  </style>
+  
+    header{flex-wrap:wrap}
+    .badge-demo{background:#263e35;color:#d9eadf;border:1px solid #527761}
+    .aurekai-context{flex:1 0 100%;border-top:1px solid var(--border);padding:.8rem 0 0;display:flex;align-items:center;justify-content:space-between;gap:.5rem 2rem;flex-wrap:wrap}
+    .aurekai-context p{margin:0;font-size:.79rem;line-height:1.6;color:var(--dim)}
+    .aurekai-context strong{color:var(--fg)}
+    .aurekai-context nav{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap}
+    .aurekai-context a{color:#f3a484;font-size:.76rem;text-decoration:underline;text-underline-offset:3px}
+    .aurekai-context a:focus-visible{outline:2px solid #f3a484;outline-offset:3px}
+    </style>
 </head>
 <body>
   <div class="app">
     <header>
       <h1>Podcast Repurposing Plant</h1>
-      <span class="badge badge-live" id="statusBadge">LIVE</span>
+      <span class="badge badge-demo" id="statusBadge">DEMO</span>
       <div class="header-right">
         <a href="studio/quick/" class="btn btn-ghost" style="display:inline-flex;align-items:center;text-decoration:none;white-space:nowrap">Open Voice Quick Mix ↗</a>
         <a href="studio/" class="btn btn-primary" style="display:inline-flex;align-items:center;text-decoration:none;white-space:nowrap">Open Multitrack Creator Studio ↗</a>
         <button class="btn btn-ghost" id="toggleDemoBtn" type="button">Hide Corpus</button>
         <button class="btn btn-ghost" onclick="toggleConfig()">Settings</button>
       </div>
+          <div class="aurekai-context" aria-label="Aurekai demo and source"><p><strong>Aurekai demonstration.</strong> Prepare source-linked audio, show notes and creative deliverables. Public or sample corpus; file intake requires a separate GitHub commit and its actual workflow. A preview is not a completed external action.</p><nav aria-label="Related sites"><a href="https://aurekai.work">Aurekai</a><a href="https://nickgonzales76017.github.io/bonfyre/">Bonfÿre</a><a href="https://github.com/Nickgonzales76017/pages-podcast-plant">Source &amp; limits</a></nav></div>
     </header>
     <div class="sidebar">
       <div class="dropzone" id="dropzone">
@@ -147,7 +157,7 @@
         <p style="font-size:1.2rem;margin-bottom:.5rem;">No episodes yet</p>
         <p>Drop a podcast episode to auto-generate show notes, clips, and an RSS feed.</p>
         <p style="margin-top:1.5rem;font-size:.85rem;line-height:1.6;">
-          <strong style="color:var(--accent);">Path 3 — Hybrid Architecture</strong><br>
+          <strong style="color:var(--accent);">Example intake path (verify actual workflow)</strong><br>
           Prepare intake copy → upload with <strong style="color:var(--accent)">GitHub’s own web UI</strong><br>→ <strong style="color:var(--accent)">Actions</strong> transcribes, cleans, paragraphs, clips → <strong style="color:#818cf8">WASM</strong> briefs in-browser → Pages deploys
         </p>
         <div style="margin-top:1.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:.75rem;text-align:center;font-size:.8rem;">
@@ -348,7 +358,7 @@
     }
 
     function showPipeline() { document.getElementById('pipeline').style.display = 'block'; document.getElementById('statusBadge').className = 'badge badge-processing'; document.getElementById('statusBadge').textContent = 'READY'; }
-    function hidePipeline() { document.getElementById('statusBadge').className = 'badge badge-live'; document.getElementById('statusBadge').textContent = 'LIVE'; }
+    function hidePipeline() { document.getElementById('statusBadge').className = 'badge badge-demo'; document.getElementById('statusBadge').textContent = 'DEMO'; }
     function updateStep(step, state) { const el = document.querySelector('[data-step="' + step + '"]'); if (el) el.className = 'pipeline-step ' + state; }
     function showWasmPreview(text) { document.getElementById('wasmPreview').style.display = 'block'; document.getElementById('previewContent').textContent = text; }
     function escapeHtml(value) {
