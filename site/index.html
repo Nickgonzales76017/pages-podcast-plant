@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Podcast Repurposing Plant</title>
+  <title>Make clips and articles from a podcast</title>
   <style>
     :root {
       --bg: #0a0a0a; --fg: #e0e0e0; --accent: #ff6600;
@@ -141,10 +141,10 @@
 </style>
 </head>
 <body>
-<nav class="aurekai-network-nav" aria-label="Aurekai application network"><span><a href="https://nickgonzales76017.github.io/bonfyre/discover/"><strong>AUREKAI</strong></a> / Podcast Repurposing Plant</span><div><a href="https://nickgonzales76017.github.io/bonfyre/discover/">All 20 applications</a><a href="https://nickgonzales76017.github.io/bonfyre/blog/from-audio-to-something-people-can-use/">Related research</a><a href="https://nickgonzales76017.github.io/bonfyre/fieldwork/">Fieldwork stories</a></div></nav>
+<nav class="aurekai-network-nav" aria-label="Aurekai application network"><span><a href="https://nickgonzales76017.github.io/bonfyre/discover/"><strong>AUREKAI</strong></a> / Make clips and articles from a podcast</span><div><a href="https://nickgonzales76017.github.io/bonfyre/discover/">All 20 applications</a><a href="https://nickgonzales76017.github.io/bonfyre/blog/from-audio-to-something-people-can-use/">Related research</a><a href="https://nickgonzales76017.github.io/bonfyre/fieldwork/">Fieldwork stories</a></div></nav>
   <div class="app">
     <header>
-      <h1>Podcast Repurposing Plant</h1>
+      <h1>Make clips and articles from a podcast</h1>
       <span class="badge badge-demo" id="statusBadge">DEMO</span>
       <div class="header-right">
         <a href="studio/quick/" class="btn btn-ghost" style="display:inline-flex;align-items:center;text-decoration:none;white-space:nowrap">Open Voice Quick Mix ↗</a>
@@ -301,7 +301,7 @@
         items = BonfyreGitHubIntake.upsertItem(items, item);
         localStorage.setItem(ITEMS_KEY, JSON.stringify(items));
         renderBoard();
-        showWasmPreview('GitHub-native launch ready.\n\n1. Download the intake-ready copy.\n2. Upload it in the repo input folder using GitHub web UI.\n3. Commit on the configured branch.\n\nPodcast Repurposing Plant will poll the public artifact outputs after that commit lands.');
+        showWasmPreview('GitHub-native launch ready.\n\n1. Download the intake-ready copy.\n2. Upload it in the repo input folder using GitHub web UI.\n3. Commit on the configured branch.\n\nThis page will check the public artifact outputs after that commit lands.');
       } catch (err) { console.error('Intake preparation failed:', err); alert('Intake preparation failed: ' + err.message); hidePipeline(); }
     }
     async function githubGetFile(path) {
